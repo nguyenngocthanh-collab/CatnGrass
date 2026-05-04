@@ -62,6 +62,11 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Player\playermovetest.cs" />
     <Compile Include="Assets\Scripts\camera\CameraFollow2D.cs" />
+    <Compile Include="Assets\Scripts\camera\CameraFollowv2.cs" />
+    <Compile Include="Assets\Scripts\Player\playermovetest2.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Scenes\LevelTest\data của map test cơ chế\brackeys_platformer_assets\LICENSE &amp; CREDITS.txt" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
