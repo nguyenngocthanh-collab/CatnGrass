@@ -26,7 +26,7 @@ public class playermovetest2 : MonoBehaviour
     public float angleLimit = 30f;
 
     private Vector2 direction;
-    private Vector2 forceVector; // cache, không new mỗi frame
+    private Vector2 forceVector;
 
     private bool jumpEnabled = true;
     private bool coyoteOn = false;
@@ -38,7 +38,6 @@ public class playermovetest2 : MonoBehaviour
     private float coyoteTimer = 0f;
     private bool coyoteCountingDown = false;
 
-    // Cache contacts array — không alloc mỗi collision
     private ContactPoint2D[] contacts = new ContactPoint2D[8];
 
     void Awake()
@@ -101,8 +100,8 @@ public class playermovetest2 : MonoBehaviour
             rb.linearVelocity = new Vector2(rb.linearVelocity.x * dampening, rb.linearVelocity.y);
         }
 
-        // Extra gravity — nhân fixedDeltaTime để frame-rate independent
-        rb.AddForce(Vector2.down * extraGravity * Time.fixedDeltaTime, ForceMode2D.Impulse);
+        // Extra gravity — Force mode, KHÔNG nhân deltaTime
+        rb.AddForce(Vector2.down * extraGravity, ForceMode2D.Force);
 
         // Jump buffer
         if (jumpPressed > 0)
@@ -139,7 +138,6 @@ public class playermovetest2 : MonoBehaviour
             rb.AddForce(forceVector);
         }
 
-        // Crouch
         if (crouch)
             rb.AddForce(Vector2.down * crouchForce, ForceMode2D.Impulse);
     }
@@ -150,21 +148,19 @@ public class playermovetest2 : MonoBehaviour
         rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
     }
 
+    // OnCollisionEnter — phát hiện chạm đất
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (!IsGround(collision.gameObject.layer)) return;
+        CheckGroundContacts(collision);
+    }
 
-        int count = collision.GetContacts(contacts);
-        for (int i = 0; i < count; i++)
-        {
-            if (Vector2.Angle(Vector2.up, contacts[i].normal) <= angleLimit)
-            {
-                jumpEnabled = true;
-                coyoteOn = true;
-                coyoteCountingDown = false;
-                break;
-            }
-        }
+    // OnCollisionStay — giữ jumpEnabled khi đứng yên trên đất
+    // Fix edge snag: Stay liên tục verify contact normal
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (!IsGround(collision.gameObject.layer)) return;
+        CheckGroundContacts(collision);
     }
 
     private void OnCollisionExit2D(Collision2D collision)
@@ -174,6 +170,22 @@ public class playermovetest2 : MonoBehaviour
         jumpEnabled = false;
         coyoteTimer = coyoteTime;
         coyoteCountingDown = true;
+    }
+
+    // Tách ra hàm riêng để Enter và Stay dùng chung
+    private void CheckGroundContacts(Collision2D collision)
+    {
+        int count = collision.GetContacts(contacts);
+        for (int i = 0; i < count; i++)
+        {
+            if (Vector2.Angle(Vector2.up, contacts[i].normal) <= angleLimit)
+            {
+                jumpEnabled = true;
+                coyoteOn = true;
+                coyoteCountingDown = false;
+                return;
+            }
+        }
     }
 
     private bool IsGround(int layer) => (groundLayer.value & (1 << layer)) != 0;
