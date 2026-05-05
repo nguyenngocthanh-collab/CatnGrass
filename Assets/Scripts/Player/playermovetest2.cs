@@ -28,7 +28,7 @@ public class playermovetest2 : MonoBehaviour
     private Vector2 direction;
     private Vector2 forceVector;
 
-    private bool jumpEnabled = true;
+    private bool jumpEnabled = false;
     private bool coyoteOn = false;
     private bool jumpCooldown = true;
     private int jumpPressed;
@@ -40,9 +40,10 @@ public class playermovetest2 : MonoBehaviour
 
     private ContactPoint2D[] contacts = new ContactPoint2D[8];
 
+    public bool IsGrounded => jumpEnabled;
     void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();
+         rb = GetComponent<Rigidbody2D>();
     }
 
     void Update()

@@ -41,5 +41,29 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: back01
+    uniqueID: 3327297737
+    locked: 0
+  - name: back02
+    uniqueID: 3782175495
+    locked: 0
+  - name: back03
+    uniqueID: 875458767
+    locked: 0
+  - name: back04
+    uniqueID: 1658958497
+    locked: 0
+  - name: back05
+    uniqueID: 1353490037
+    locked: 0
+  - name: back06
+    uniqueID: 608322475
+    locked: 0
+  - name: back07
+    uniqueID: 2149980491
+    locked: 0
+  - name: ground main
+    uniqueID: 2107047573
+    locked: 0
   m_RenderingLayers:
   - Default
