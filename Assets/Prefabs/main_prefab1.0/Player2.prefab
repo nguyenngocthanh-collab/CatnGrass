@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 6638327599206919733}
   - component: {fileID: 8289582717517663940}
   - component: {fileID: 7005644522590355783}
+  - component: {fileID: 8655381411930511849}
+  - component: {fileID: 6053300514170850566}
   m_Layer: 3
   m_Name: Player2
   m_TagString: Untagged
@@ -69,6 +71,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69c1e47bd9846ef409c365fa46b8adf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8655381411930511849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5035140138061966390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2212f679998c25419d4276895151a8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 3
+  OnHPChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &6053300514170850566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5035140138061966390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec1a07a2d31c4b647964dffef5c6c97e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mode: 0
+  playerDead: {fileID: 8289582717517663940}
+  health: {fileID: 8655381411930511849}
+  checkpoint: {fileID: 0}
+  respawnDelay: 1.5
 --- !u!1001 &751243629651503780
 PrefabInstance:
   m_ObjectHideFlags: 0

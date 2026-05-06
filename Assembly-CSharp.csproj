@@ -62,10 +62,14 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Player\playermovetest.cs" />
     <Compile Include="Assets\Scripts\camera\CameraFollow2D.cs" />
+    <Compile Include="Assets\Scripts\Player\DamageDealer.cs" />
+    <Compile Include="Assets\Scripts\Player\IDamageable.cs" />
     <Compile Include="Assets\Scripts\camera\Paralax001.cs" />
     <Compile Include="Assets\Scripts\camera\CameraFollowv2.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerDead.cs" />
     <Compile Include="Assets\Scripts\Player\DebugDeath.cs" />
+    <Compile Include="Assets\Scripts\Player\HealthSystem.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerDeathHandler.cs" />
     <Compile Include="Assets\Scripts\Player\playermovetest2.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerAnimator.cs" />
   </ItemGroup>
