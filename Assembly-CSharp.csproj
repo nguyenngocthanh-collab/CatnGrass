@@ -64,7 +64,9 @@
     <Compile Include="Assets\Scripts\camera\CameraFollow2D.cs" />
     <Compile Include="Assets\Scripts\Player\DamageDealer.cs" />
     <Compile Include="Assets\Scripts\Player\IDamageable.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Meteor\Meteor.cs" />
     <Compile Include="Assets\Scripts\camera\Paralax001.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Meteor\MeteorSpawner.cs" />
     <Compile Include="Assets\Scripts\camera\CameraFollowv2.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerDead.cs" />
     <Compile Include="Assets\Scripts\Player\DebugDeath.cs" />
