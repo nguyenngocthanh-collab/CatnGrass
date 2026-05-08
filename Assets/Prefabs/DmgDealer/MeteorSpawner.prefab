@@ -51,19 +51,19 @@ MonoBehaviour:
   spawnPositionMode: 0
   playerTag: Player
   minPerWave: 1
-  maxPerWave: 4
+  maxPerWave: 2
   minWaveInterval: 1.5
   maxWaveInterval: 4
   intraWaveDelay: 0.1
   spawnDuration: 0
   useWarning: 1
   warningTime: 0.8
-  minSpeed: 5
-  maxSpeed: 20.8
-  baseAngleDeg: 270
-  angleSpread: 30
-  minSize: 2.64
-  maxSize: 2.82
+  minSpeed: 10.93
+  maxSpeed: 41.2
+  baseAngleDeg: 234.9
+  angleSpread: 50
+  minSize: 0.34
+  maxSize: 0.73
   spawnMargin: 1.5
   aroundPlayerRadius: 8
   fixedZoneSize: {x: 10, y: 2}

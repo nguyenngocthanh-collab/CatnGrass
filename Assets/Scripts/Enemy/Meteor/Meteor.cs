@@ -1,49 +1,61 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 /// <summary>
-/// G?n v�o prefab thi�n th?ch.
-/// - Random k�ch th??c (scale + collider)
-/// - Bay theo h??ng ???c set t? ngo�i (MeteorSpawner g?i Init)
-/// - T? h?y khi ra ngo�i viewport + lifetime
-/// - T?o Warning Indicator tr�n r�a m�n h�nh tr??c khi v�o
-/// 
-/// REQUIRES: DamageDealer ?� g?n s?n tr�n prefab (ho?c child)
-/// REQUIRES: Prefab c� SpriteRenderer + CircleCollider2D (ho?c PolygonCollider2D)
+/// FLOW:
+///   1. Spawn xa ngoài màn hình, đứng IM trong holdTime giây
+///   2. Warning nhấp nháy ở mép camera (KHÔNG xoay sprite)
+///   3. Sau holdTime → phóng, warning mất khi meteor vào camera
 /// </summary>
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(SpriteRenderer))]
 public class Meteor : MonoBehaviour
 {
-    [Header("Visual Warning")]
-    [Tooltip("Prefab sprite m?i t�n / ch?m c?nh b�o hi?n tr�n r�a m�n h�nh")]
+    // ── Warning ──────────────────────────────────────────
+    [Header("Warning")]
+
+    [Tooltip("Prefab chỉ cần có SpriteRenderer")]
     [SerializeField] private GameObject warningIndicatorPrefab;
 
-    [Tooltip("M�u warning indicator")]
     [SerializeField] private Color warningColor = new Color(1f, 0.3f, 0f, 1f);
 
-    [Tooltip("Gi�y hi?n th? warning tr??c khi meteor v�o m�n h�nh (0 = kh�ng warning)")]
-    [SerializeField] private float warningDuration = 1.2f;
+    [Tooltip("Scale của warning, độc lập với meteor")]
+    [SerializeField] private float warningScale = 1f;
 
+    [Tooltip("Khoảng lùi từ mép màn hình (viewport 0-1). 0 = sát mép")]
+    [SerializeField][Range(0f, 0.3f)] private float warningEdgePadding = 0.06f;
+
+    [Tooltip("Giây mỗi chu kỳ bật/tắt. Nhỏ hơn = nhanh hơn")]
+    [SerializeField][Range(0.05f, 0.8f)] private float warningBlinkInterval = 0.2f;
+
+    // ── Hold Before Launch ────────────────────────────────
+    [Header("Hold Before Launch")]
+
+    [Tooltip("Giây đứng im trước khi phóng — cũng là thời gian warning hiển thị")]
+    [SerializeField] private float holdTime = 1.5f;
+
+    [Tooltip("Ẩn sprite meteor trong lúc hold (chỉ hiện warning)")]
+    [SerializeField] private bool hideWhileHolding = true;
+
+    // ── Lifetime ──────────────────────────────────────────
     [Header("Lifetime")]
-    [Tooltip("T? h?y sau bao gi�y k? t? khi spawn (ph�ng tr??ng h?p bay ra ngo�i m� kh�ng trigger exit)")]
+
+    [Tooltip("Tính từ lúc phóng")]
     [SerializeField] private float maxLifetime = 15f;
 
-    // ?? ???c set b?i MeteorSpawner.InitMeteor() ??????????????????????????????
+    // ── Internal ──────────────────────────────────────────
     private Vector2 _velocity;
-    private float _minSize;
-    private float _maxSize;
+    private float _minSize, _maxSize;
 
-    // internal
     private Rigidbody2D _rb;
     private SpriteRenderer _sr;
-    private GameObject _warningInstance;
-    private bool _entered = false; // ?� v�o viewport ch?a
     private Camera _cam;
 
-    // ?? Public init � MeteorSpawner g?i sau Instantiate ??????????????????????
-    /// <param name="velocity">H??ng + t?c ?? (world units/s)</param>
-    /// <param name="minSize">Scale nh? nh?t</param>
-    /// <param name="maxSize">Scale l?n nh?t</param>
+    private bool _launched;
+    private bool _entered;
+    private float _holdElapsed;
+    private GameObject _warningInstance;
+
+    // ── Init (gọi trước Start) ────────────────────────────
     public void InitMeteor(Vector2 velocity, float minSize, float maxSize)
     {
         _velocity = velocity;
@@ -51,7 +63,7 @@ public class Meteor : MonoBehaviour
         _maxSize = maxSize;
     }
 
-    // ?????????????????????????????????????????????????????????????????????????
+    // ── Awake ─────────────────────────────────────────────
     private void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
@@ -60,131 +72,119 @@ public class Meteor : MonoBehaviour
 
         _rb.gravityScale = 0f;
         _rb.freezeRotation = false;
+        _rb.linearVelocity = Vector2.zero;   // đứng im
+        _rb.angularVelocity = 0f;
     }
 
+    // ── Start ─────────────────────────────────────────────
     private void Start()
     {
-        // Random k�ch th??c
+        // Random size
         float size = Random.Range(_minSize, _maxSize);
         transform.localScale = Vector3.one * size;
 
-        // Xoay sprite theo h??ng bay
+        // Xoay meteor theo hướng bay (visual)
         float angle = Mathf.Atan2(_velocity.y, _velocity.x) * Mathf.Rad2Deg - 90f;
-        transform.rotation = Quaternion.Euler(0, 0, angle);
+        transform.rotation = Quaternion.Euler(0f, 0f, angle);
 
-        // Set velocity
-        _rb.linearVelocity = _velocity;
+        if (hideWhileHolding)
+            _sr.enabled = false;
 
-        // T? xoay nh? khi bay (aesthetic)
-        _rb.angularVelocity = Random.Range(-180f, 180f);
-
-        // H?y sau lifetime t?i ?a
-        Destroy(gameObject, maxLifetime);
-
-        // Hi?n warning n?u c?n
-        if (warningDuration > 0f && warningIndicatorPrefab != null)
+        if (warningIndicatorPrefab != null)
             SpawnWarning();
+
+        Destroy(gameObject, holdTime + maxLifetime);
     }
 
+    // ── Update ────────────────────────────────────────────
     private void Update()
     {
-        // Ki?m tra ?� v�o viewport ch?a ?? b?t ??u track exit
+        if (!_launched)
+        {
+            _holdElapsed += Time.deltaTime;
+            if (_holdElapsed >= holdTime)
+                Launch();
+            return;
+        }
+
         if (!_entered)
         {
             if (IsInsideViewport())
             {
                 _entered = true;
-                // X�a warning khi ?� v�o m�n
-                if (_warningInstance != null)
-                    Destroy(_warningInstance);
+                DestroyWarning();
             }
         }
         else
         {
-            // ?� v�o r?i m� ra ngo�i ? h?y
-            if (!IsInsideViewport(margin: 2f))
+            if (!IsInsideViewport(2f))
                 Destroy(gameObject);
         }
     }
 
-    // ?? Warning Indicator ????????????????????????????????????????????????????
+    // ── Launch ────────────────────────────────────────────
+    private void Launch()
+    {
+        _launched = true;
+        _sr.enabled = true;
+        _rb.linearVelocity = _velocity;
+        _rb.angularVelocity = Random.Range(-180f, 180f);
+    }
+
+    // ── Warning ───────────────────────────────────────────
     private void SpawnWarning()
     {
-        // T�nh v? tr� r�a m�n h�nh g?n nh?t theo h??ng ng??c l?i
-        Vector3 edgePos = GetEdgePosition();
-        _warningInstance = Instantiate(warningIndicatorPrefab, edgePos, Quaternion.identity);
+        _warningInstance = Instantiate(
+            warningIndicatorPrefab,
+            Vector3.zero,
+            Quaternion.identity);          // KHÔNG xoay
 
-        // Xoay indicator tr? v? h??ng bay ??n
-        float angle = Mathf.Atan2(_velocity.y, _velocity.x) * Mathf.Rad2Deg;
-        _warningInstance.transform.rotation = Quaternion.Euler(0, 0, angle);
+        _warningInstance.transform.localScale = Vector3.one * warningScale;
 
-        // T� m�u warning
         var wsr = _warningInstance.GetComponent<SpriteRenderer>();
         if (wsr != null) wsr.color = warningColor;
 
-        // Nh?p nh�y r?i t? h?y
         var blink = _warningInstance.AddComponent<WarningBlinker>();
-        blink.Init(warningDuration);
+        blink.Init(warningBlinkInterval);
 
-        // G?n theo r�a m�n h�nh (update position)
         var tracker = _warningInstance.AddComponent<EdgeTracker>();
-        tracker.Init(transform, _cam);
+        tracker.target = transform;
+        tracker.padding = warningEdgePadding;
     }
 
-    private Vector3 GetEdgePosition()
+    private void DestroyWarning()
     {
-        if (_cam == null) return transform.position;
-
-        float h = _cam.orthographicSize;
-        float w = h * _cam.aspect;
-        Vector3 camPos = _cam.transform.position;
-
-        // H??ng t? meteor ??n m�n h�nh
-        Vector2 dir = _velocity.normalized;
-
-        // Intersect v?i 4 c?nh viewport
-        // ??n gi?n: clamp v�o viewport bounds
-        Vector3 pos = transform.position;
-        float tx = dir.x != 0 ? (dir.x > 0 ? (camPos.x + w - pos.x) / dir.x : (camPos.x - w - pos.x) / dir.x) : float.MaxValue;
-        float ty = dir.y != 0 ? (dir.y > 0 ? (camPos.y + h - pos.y) / dir.y : (camPos.y - h - pos.y) / dir.y) : float.MaxValue;
-        float t = Mathf.Min(Mathf.Abs(tx), Mathf.Abs(ty));
-        if (t < 0) t = 0;
-
-        Vector3 edge = pos + new Vector3(dir.x, dir.y, 0) * t;
-        edge.x = Mathf.Clamp(edge.x, camPos.x - w, camPos.x + w);
-        edge.y = Mathf.Clamp(edge.y, camPos.y - h, camPos.y + h);
-        edge.z = 0;
-        return edge;
+        if (_warningInstance != null)
+        {
+            Destroy(_warningInstance);
+            _warningInstance = null;
+        }
     }
 
+    // ── Viewport ──────────────────────────────────────────
     private bool IsInsideViewport(float margin = 0f)
     {
         if (_cam == null) return true;
         Vector3 vp = _cam.WorldToViewportPoint(transform.position);
-        return vp.x > -margin && vp.x < 1 + margin &&
-               vp.y > -margin && vp.y < 1 + margin;
+        return vp.x > -margin && vp.x < 1f + margin
+            && vp.y > -margin && vp.y < 1f + margin;
     }
 
-    private void OnDestroy()
-    {
-        if (_warningInstance != null)
-            Destroy(_warningInstance);
-    }
+    private void OnDestroy() => DestroyWarning();
 }
 
-// ?? Helper Components (nh?, t? x�a) ?????????????????????????????????????????
-
-/// <summary>Nh?p nh�y SpriteRenderer r?i t? h?y GameObject</summary>
+// =========================================================
+// WarningBlinker — nhấp nháy, KHÔNG tự hủy, KHÔNG xoay
+// =========================================================
 public class WarningBlinker : MonoBehaviour
 {
-    private float _lifetime;
+    private float _interval = 0.2f;
     private float _elapsed;
     private SpriteRenderer _sr;
-    private float _blinkRate = 0.15f;
 
-    public void Init(float lifetime)
+    public void Init(float blinkInterval)
     {
-        _lifetime = lifetime;
+        _interval = Mathf.Max(0.05f, blinkInterval);
         _sr = GetComponent<SpriteRenderer>();
     }
 
@@ -192,53 +192,46 @@ public class WarningBlinker : MonoBehaviour
     {
         _elapsed += Time.deltaTime;
         if (_sr != null)
-        {
-            bool visible = (int)(_elapsed / _blinkRate) % 2 == 0;
-            _sr.enabled = visible;
-        }
-        if (_elapsed >= _lifetime)
-            Destroy(gameObject);
+            _sr.enabled = (int)(_elapsed / _interval) % 2 == 0;
+        // Không tự Destroy — Meteor.cs chịu trách nhiệm
     }
 }
 
-/// <summary>Gi? warning indicator lu�n ? r�a m�n h�nh theo h??ng meteor</summary>
+// =========================================================
+// EdgeTracker — warning bám mép camera, KHÔNG xoay sprite
+// =========================================================
 public class EdgeTracker : MonoBehaviour
 {
-    private Transform _target;
+    public Transform target;
+    [Range(0f, 0.3f)] public float padding = 0.06f;
+
     private Camera _cam;
 
-    public void Init(Transform target, Camera cam)
-    {
-        _target = target;
-        _cam = cam;
-    }
+    private void Start() => _cam = Camera.main;
 
     private void LateUpdate()
     {
-        if (_target == null || _cam == null) return;
+        if (target == null) { Destroy(gameObject); return; }
+        if (_cam == null) return;
 
-        float h = _cam.orthographicSize;
-        float w = h * _cam.aspect;
-        Vector3 camPos = _cam.transform.position;
-        Vector3 dir = (_target.position - _cam.transform.position).normalized;
+        Vector3 vp = _cam.WorldToViewportPoint(target.position);
 
-        float tx = dir.x != 0 ? (dir.x > 0 ? (camPos.x + w) : (camPos.x - w)) : float.MaxValue;
-        float ty = dir.y != 0 ? (dir.y > 0 ? (camPos.y + h) : (camPos.y - h)) : float.MaxValue;
+        bool inView = vp.x >= 0f && vp.x <= 1f
+                   && vp.y >= 0f && vp.y <= 1f
+                   && vp.z > 0f;
 
-        float ratioX = dir.x != 0 ? Mathf.Abs((tx - camPos.x) / dir.x) : float.MaxValue;
-        float ratioY = dir.y != 0 ? Mathf.Abs((ty - camPos.y) / dir.y) : float.MaxValue;
+        if (inView) { gameObject.SetActive(false); return; }
 
-        Vector3 edge;
-        if (ratioX < ratioY)
-            edge = new Vector3(tx, camPos.y + dir.y * ratioX, 0);
-        else
-            edge = new Vector3(camPos.x + dir.x * ratioY, ty, 0);
+        gameObject.SetActive(true);
 
-        transform.position = edge;
+        vp.x = Mathf.Clamp(vp.x, padding, 1f - padding);
+        vp.y = Mathf.Clamp(vp.y, padding, 1f - padding);
 
-        // Xoay indicator tr? v? meteor
-        Vector2 toTarget = ((Vector2)_target.position - (Vector2)transform.position).normalized;
-        float angle = Mathf.Atan2(toTarget.y, toTarget.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0, 0, angle);
+        float depth = Mathf.Abs(_cam.transform.position.z);
+        Vector3 world = _cam.ViewportToWorldPoint(new Vector3(vp.x, vp.y, depth));
+        world.z = 0f;
+        transform.position = world;
+
+        // KHÔNG set rotation
     }
 }

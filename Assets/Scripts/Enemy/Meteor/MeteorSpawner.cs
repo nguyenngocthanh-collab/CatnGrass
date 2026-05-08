@@ -323,57 +323,28 @@ public class MeteorSpawner : MonoBehaviour
 
     private IEnumerator SpawnOneMeteor()
     {
-        if (meteorPrefab == null)
-            yield break;
+        if (meteorPrefab == null) yield break;
 
         Vector3 spawnPos = GetSpawnPosition();
-
-        // WARNING
-        if (useWarning &&
-            warningPrefab != null)
-        {
-            GameObject warning =
-                Instantiate(
-                    warningPrefab,
-                    spawnPos,
-                    Quaternion.identity);
-
-            Destroy(warning, warningTime);
-
-            yield return new WaitForSeconds(warningTime);
-        }
-
         Vector2 velocity = GetVelocity(spawnPos);
 
-        GameObject meteorObj =
-            Instantiate(
-                meteorPrefab,
-                spawnPos,
-                Quaternion.identity,
-                meteorParent);
+        // Spawn meteor — nó tự hold + show warning bên trong
+        GameObject meteorObj = Instantiate(
+            meteorPrefab,
+            spawnPos,
+            Quaternion.identity,
+            meteorParent);
 
-        Meteor meteor =
-            meteorObj.GetComponent<Meteor>();
-
+        Meteor meteor = meteorObj.GetComponent<Meteor>();
         if (meteor != null)
-        {
-            meteor.InitMeteor(
-                velocity,
-                minSize,
-                maxSize);
-        }
+            meteor.InitMeteor(velocity, minSize, maxSize);
         else
-        {
-            Debug.LogWarning(
-                "[MeteorSpawner] Meteor prefab thiếu Meteor.cs");
-        }
+            Debug.LogWarning("[MeteorSpawner] Meteor prefab thiếu Meteor.cs");
 
         _activeMeteorCount++;
 
-        MeteorDestroyCallback callback =
-            meteorObj.AddComponent<MeteorDestroyCallback>();
-
-        callback.Init(() => _activeMeteorCount--);
+        MeteorDestroyCallback cb = meteorObj.AddComponent<MeteorDestroyCallback>();
+        cb.Init(() => _activeMeteorCount--);
     }
 
     // =========================================================

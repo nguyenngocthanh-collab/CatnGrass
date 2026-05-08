@@ -126,7 +126,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21c75d04e7828514e962c2f52d2006eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeTime: 10
+  warningIndicatorPrefab: {fileID: 4071519547031237277, guid: 0bd3fd59cbbd99c478fb97faa5c03e1a, type: 3}
+  warningColor: {r: 1, g: 1, b: 1, a: 1}
+  warningScale: 0.32
+  warningEdgePadding: 0.06
+  warningBlinkInterval: 0.8
+  holdTime: 1.5
+  hideWhileHolding: 1
+  maxLifetime: 15
 --- !u!212 &3307653949986671439
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -171,7 +178,7 @@ SpriteRenderer:
   m_SortingLayerID: 2107047573
   m_SortingLayer: 8
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1924197731, guid: 716d31821fbf99148b0b52d382716fd6, type: 3}
+  m_Sprite: {fileID: -925345978958199149, guid: ba732d3c6c68360458dfb5e8e4b62da9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
