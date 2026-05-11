@@ -1,3 +1,4 @@
+﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -6,10 +7,16 @@ public class DeathMenu : MonoBehaviour
     [Header("UI")]
     public GameObject deathPanel;
 
+    [Header("Delay")]
+    public float deathScreenDelay = 1.5f;
+
     private bool isDead = false;
 
     void Start()
     {
+        // Reset timescale khi vào scene
+        Time.timeScale = 1f;
+
         deathPanel.SetActive(false);
     }
 
@@ -18,6 +25,14 @@ public class DeathMenu : MonoBehaviour
         if (isDead) return;
 
         isDead = true;
+
+        StartCoroutine(DeathSequence());
+    }
+
+    private IEnumerator DeathSequence()
+    {
+        // Delay realtime để không bị ảnh hưởng bởi TimeScale
+        yield return new WaitForSecondsRealtime(deathScreenDelay);
 
         deathPanel.SetActive(true);
 

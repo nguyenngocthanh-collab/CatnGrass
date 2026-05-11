@@ -9,6 +9,15 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
+    path: Assets/Scenes/MainMenu/MainMenu.unity
+    guid: 88ef3eb0e5223aa4292471343db4c276
+  - enabled: 1
+    path: Assets/Scenes/IntroSence.unity
+    guid: aa544d6d553fca94db8034a4c701c732
+  - enabled: 1
+    path: Assets/Scenes/PlanetSence.unity
+    guid: d42b0813f9aec0d4e8efe59fe8876e07
+  - enabled: 1
     path: Assets/Scenes/Level1/lv01_v01.unity
     guid: 150f929b19e164c4b8dbbfcda5895f36
   - enabled: 1

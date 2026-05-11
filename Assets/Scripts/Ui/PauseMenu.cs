@@ -3,12 +3,16 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
+    [Header("UI")]
     public GameObject pausePanel;
 
-    bool isPaused = false;
+    private bool isPaused = false;
 
     void Start()
     {
+        // Reset pause khi vào scene
+        Time.timeScale = 1f;
+
         pausePanel.SetActive(false);
     }
 
@@ -43,6 +47,6 @@ public class PauseMenu : MonoBehaviour
     {
         Time.timeScale = 1f;
 
-        SceneManager.LoadScene("LevelSelect");
+        SceneManager.LoadScene("MainMenu");
     }
 }
