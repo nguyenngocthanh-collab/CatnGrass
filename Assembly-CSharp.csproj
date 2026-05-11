@@ -60,24 +60,66 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.1.9f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\camera\MeteorEventZone.cs" />
     <Compile Include="Assets\Scripts\Player\RespawnSystem.cs" />
     <Compile Include="Assets\Scripts\Player\playermovetest.cs" />
+    <Compile Include="Assets\Scripts\Player\RespawnHazard.cs" />
+    <Compile Include="Assets\Scripts\Ui\LevelEndTrigger.cs" />
     <Compile Include="Assets\Scripts\camera\CameraFollow2D.cs" />
     <Compile Include="Assets\Scripts\Player\DamageDealer.cs" />
     <Compile Include="Assets\Scripts\Player\IDamageable.cs" />
+    <Compile Include="Assets\Scripts\Player\lv2\MouseSwimController.cs" />
+    <Compile Include="Assets\Scripts\Player\lv2\MousePlayerDeathHandler.cs" />
     <Compile Include="Assets\Scripts\Enemy\Meteor\Meteor.cs" />
+    <Compile Include="Assets\Scripts\Enemy\phaselv2\Sharkenemy.cs" />
     <Compile Include="Assets\Scripts\camera\Paralax001.cs" />
     <Compile Include="Assets\Scripts\Enemy\Meteor\MeteorSpawner.cs" />
     <Compile Include="Assets\Scripts\camera\CameraFollowv2.cs" />
+    <Compile Include="Assets\Scripts\Enemy\phaselv2\Hookenemy.cs" />
+    <Compile Include="Assets\Scripts\Ui\PauseMenu.cs" />
+    <Compile Include="Assets\Scripts\Ui\DeathMenu.cs" />
+    <Compile Include="Assets\Scripts\Enemy\phaselv2\WavePhaseManager.cs" />
+    <Compile Include="Assets\Scripts\Enemy\phaselv2\WarningLineFX.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerDead.cs" />
+    <Compile Include="Assets\Scripts\system\LevelTimer.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerClamp.cs" />
+    <Compile Include="Assets\Scripts\camera\MeteorCinematicEvent.cs" />
+    <Compile Include="Assets\Scripts\Player\HeartDisplay.cs" />
     <Compile Include="Assets\Scripts\Player\DebugDeath.cs" />
     <Compile Include="Assets\Scripts\Player\HealthSystem.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerDeathHandler.cs" />
     <Compile Include="Assets\Scripts\Player\playermovetest2.cs" />
+    <Compile Include="Assets\Scripts\Enemy\phaselv2\PhaseData.cs" />
+    <Compile Include="Assets\Scripts\Player\lv2\MousePlayerAnimator.cs" />
+    <Compile Include="Assets\Scripts\Player\RespawnSystem02.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerAnimator.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Meteor\MeteorSmokeSetup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile-2-Pass.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\SDFFunctions.hlsl" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
+    <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
     <None Include="Assets\Scenes\LevelTest\data của map test cơ chế\brackeys_platformer_assets\LICENSE &amp; CREDITS.txt" />
+    <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

@@ -1,31 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-/// <summary>
-/// Meteor Spawner System
-/// 
-/// HỖ TRỢ:
-/// - Spawn liên tục
-/// - Spawn theo trigger
-/// - Spawn theo player
-/// - Perspective + Orthographic camera
-/// - Random tốc độ
-/// - Random góc
-/// - Random scale
-/// - Random wave
-/// - Random cạnh màn hình
-/// - Spawn quanh player
-/// - Fixed zone
-/// - Warning prefab
-/// - Limit meteor
-/// - Auto cleanup
-/// 
-/// METEOR PREFAB CẦN:
-/// - Rigidbody2D
-/// - Collider2D
-/// - DamageDealer
-/// - Meteor.cs
-/// </summary>
 public class MeteorSpawner : MonoBehaviour
 {
     // =========================================================
@@ -55,9 +30,6 @@ public class MeteorSpawner : MonoBehaviour
 
     [SerializeField]
     private GameObject meteorPrefab;
-
-    [SerializeField]
-    private GameObject warningPrefab;
 
     [SerializeField]
     private Transform meteorParent;
@@ -101,18 +73,6 @@ public class MeteorSpawner : MonoBehaviour
 
     [SerializeField]
     private float spawnDuration = 0f;
-
-    // =========================================================
-    // WARNING
-    // =========================================================
-
-    [Header("════════ WARNING ════════")]
-
-    [SerializeField]
-    private bool useWarning = true;
-
-    [SerializeField]
-    private float warningTime = 0.8f;
 
     // =========================================================
     // SPEED
@@ -180,6 +140,15 @@ public class MeteorSpawner : MonoBehaviour
     private bool refreshCameraEachWave = false;
 
     // =========================================================
+    // DEBUG
+    // =========================================================
+
+    [Header("════════ DEBUG ══════════")]
+
+    [SerializeField]
+    private bool enableDebugLogs = true;
+
+    // =========================================================
     // RUNTIME
     // =========================================================
 
@@ -199,19 +168,36 @@ public class MeteorSpawner : MonoBehaviour
 
     private void Awake()
     {
+        DebugLog("AWAKE");
+
         _cam = Camera.main;
+
+        if (_cam == null)
+        {
+            Debug.LogError("[MeteorSpawner] Main Camera NOT FOUND");
+        }
+        else
+        {
+            DebugLog("Main Camera Found");
+        }
 
         FindPlayer();
     }
 
     private void Start()
     {
-        // FIXED:
-        // TrackPlayer giờ auto start
+        DebugLog("START");
+
+        if (meteorPrefab == null)
+        {
+            Debug.LogError("[MeteorSpawner] Meteor Prefab MISSING");
+        }
 
         if (spawnerMode == SpawnerMode.Always ||
             spawnerMode == SpawnerMode.TrackPlayer)
         {
+            DebugLog("Auto Start Spawning");
+
             StartSpawning();
         }
     }
@@ -222,22 +208,42 @@ public class MeteorSpawner : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (spawnerMode != SpawnerMode.OnTrigger)
-            return;
+        DebugLog("Trigger Enter: " + other.name);
 
-        if (!other.CompareTag(playerTag))
+        if (spawnerMode != SpawnerMode.OnTrigger)
+        {
+            DebugLog("Not OnTrigger Mode");
             return;
+        }
+
+        Transform root = other.transform.root;
+
+        DebugLog("Root Object: " + root.name);
+
+        if (!root.CompareTag(playerTag))
+        {
+            DebugLog("Wrong Tag");
+            return;
+        }
+
+        DebugLog("PLAYER DETECTED");
 
         StartSpawning();
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
+        DebugLog("Trigger Exit: " + other.name);
+
         if (spawnerMode != SpawnerMode.OnTrigger)
             return;
 
-        if (!other.CompareTag(playerTag))
+        Transform root = other.transform.root;
+
+        if (!root.CompareTag(playerTag))
             return;
+
+        DebugLog("STOP SPAWNING");
 
         StopSpawning();
     }
@@ -248,23 +254,39 @@ public class MeteorSpawner : MonoBehaviour
 
     public void StartSpawning()
     {
+        DebugLog("StartSpawning CALLED");
+
         if (_spawning)
+        {
+            DebugLog("Already Spawning");
             return;
+        }
 
         _spawning = true;
+
+        DebugLog("Spawn Loop Started");
 
         _spawnRoutine = StartCoroutine(SpawnLoop());
     }
 
     public void StopSpawning()
     {
+        DebugLog("StopSpawning CALLED");
+
         if (!_spawning)
+        {
+            DebugLog("Already Stopped");
             return;
+        }
 
         _spawning = false;
 
         if (_spawnRoutine != null)
+        {
             StopCoroutine(_spawnRoutine);
+
+            DebugLog("Spawn Coroutine Stopped");
+        }
     }
 
     // =========================================================
@@ -273,35 +295,51 @@ public class MeteorSpawner : MonoBehaviour
 
     private IEnumerator SpawnLoop()
     {
+        DebugLog("SpawnLoop START");
+
         float elapsed = 0f;
 
         while (_spawning)
         {
             if (refreshCameraEachWave)
+            {
                 _cam = Camera.main;
 
+                DebugLog("Camera Refreshed");
+            }
+
             if (spawnerMode == SpawnerMode.TrackPlayer)
+            {
                 FindPlayer();
+            }
 
             int count =
                 Random.Range(minPerWave, maxPerWave + 1);
+
+            DebugLog("Wave Count = " + count);
 
             for (int i = 0; i < count; i++)
             {
                 if (maxActiveMeteors > 0 &&
                     _activeMeteorCount >= maxActiveMeteors)
                 {
+                    DebugLog("Meteor Limit Reached");
+
                     break;
                 }
 
                 yield return SpawnOneMeteor();
 
                 if (intraWaveDelay > 0f)
+                {
                     yield return new WaitForSeconds(intraWaveDelay);
+                }
             }
 
             float interval =
                 Random.Range(minWaveInterval, maxWaveInterval);
+
+            DebugLog("Next Wave In: " + interval);
 
             yield return new WaitForSeconds(interval);
 
@@ -311,10 +349,14 @@ public class MeteorSpawner : MonoBehaviour
 
                 if (elapsed >= spawnDuration)
                 {
+                    DebugLog("Spawn Duration Ended");
+
                     StopSpawning();
                 }
             }
         }
+
+        DebugLog("SpawnLoop END");
     }
 
     // =========================================================
@@ -323,28 +365,72 @@ public class MeteorSpawner : MonoBehaviour
 
     private IEnumerator SpawnOneMeteor()
     {
-        if (meteorPrefab == null) yield break;
+        DebugLog("SpawnOneMeteor");
+
+        if (meteorPrefab == null)
+        {
+            Debug.LogError("[MeteorSpawner] Meteor Prefab NULL");
+
+            yield break;
+        }
 
         Vector3 spawnPos = GetSpawnPosition();
+
+        DebugLog("Spawn Position = " + spawnPos);
+
         Vector2 velocity = GetVelocity(spawnPos);
 
-        // Spawn meteor — nó tự hold + show warning bên trong
+        DebugLog("Velocity = " + velocity);
+
         GameObject meteorObj = Instantiate(
             meteorPrefab,
             spawnPos,
             Quaternion.identity,
             meteorParent);
 
+        if (meteorObj == null)
+        {
+            Debug.LogError("[MeteorSpawner] Instantiate FAILED");
+
+            yield break;
+        }
+
+        DebugLog("Meteor Spawned: " + meteorObj.name);
+
         Meteor meteor = meteorObj.GetComponent<Meteor>();
+
         if (meteor != null)
-            meteor.InitMeteor(velocity, minSize, maxSize);
+        {
+            meteor.InitMeteor(
+                velocity,
+                minSize,
+                maxSize);
+
+            DebugLog("Meteor Initialized");
+        }
         else
-            Debug.LogWarning("[MeteorSpawner] Meteor prefab thiếu Meteor.cs");
+        {
+            Debug.LogWarning(
+                "[MeteorSpawner] Missing Meteor.cs");
+        }
 
         _activeMeteorCount++;
 
-        MeteorDestroyCallback cb = meteorObj.AddComponent<MeteorDestroyCallback>();
-        cb.Init(() => _activeMeteorCount--);
+        DebugLog("Active Meteors = " + _activeMeteorCount);
+
+        MeteorDestroyCallback cb =
+            meteorObj.AddComponent<MeteorDestroyCallback>();
+
+        cb.Init(() =>
+        {
+            _activeMeteorCount--;
+
+            DebugLog("Meteor Destroyed");
+
+            DebugLog("Active Meteors = " + _activeMeteorCount);
+        });
+
+        yield return null;
     }
 
     // =========================================================
@@ -373,13 +459,17 @@ public class MeteorSpawner : MonoBehaviour
     }
 
     // =========================================================
-    // PERSPECTIVE + ORTHOGRAPHIC SAFE
+    // SPAWN MODES
     // =========================================================
 
     private Vector3 SpawnAboveViewport()
     {
         if (_cam == null)
+        {
+            Debug.LogError("[MeteorSpawner] Camera NULL");
+
             return transform.position;
+        }
 
         float distance =
             Mathf.Abs(_cam.transform.position.z);
@@ -493,7 +583,6 @@ public class MeteorSpawner : MonoBehaviour
             baseAngleDeg +
             Random.Range(-angleSpread, angleSpread);
 
-        // AUTO AIM PLAYER
         if (spawnPositionMode ==
             SpawnPositionMode.AroundPlayer &&
             _player != null)
@@ -534,7 +623,28 @@ public class MeteorSpawner : MonoBehaviour
             GameObject.FindGameObjectWithTag(playerTag);
 
         if (p != null)
+        {
             _player = p.transform;
+
+            DebugLog("Player Found");
+        }
+        else
+        {
+            Debug.LogWarning(
+                "[MeteorSpawner] Player NOT FOUND");
+        }
+    }
+
+    // =========================================================
+    // DEBUG
+    // =========================================================
+
+    private void DebugLog(string msg)
+    {
+        if (!enableDebugLogs)
+            return;
+
+        Debug.Log("[MeteorSpawner] " + msg);
     }
 
     // =========================================================
@@ -543,79 +653,11 @@ public class MeteorSpawner : MonoBehaviour
 
     private void OnDrawGizmosSelected()
     {
-        // FIXED ZONE
-        if (spawnPositionMode ==
-            SpawnPositionMode.FixedZone)
-        {
-            Gizmos.color =
-                new Color(1f, 0.5f, 0f, 0.3f);
-
-            Gizmos.DrawCube(
-                transform.position,
-                fixedZoneSize);
-
-            Gizmos.color = Color.yellow;
-
-            Gizmos.DrawWireCube(
-                transform.position,
-                fixedZoneSize);
-        }
-
-        // AROUND PLAYER
-        if (spawnPositionMode ==
-            SpawnPositionMode.AroundPlayer)
-        {
-            Gizmos.color =
-                new Color(1f, 0f, 0f, 0.3f);
-
-            DrawCircle(
-                transform.position,
-                aroundPlayerRadius,
-                32);
-        }
-
-        // DIRECTION
         Gizmos.color = Color.cyan;
 
-        float rad =
-            baseAngleDeg * Mathf.Deg2Rad;
-
-        Vector3 dir =
-            new Vector3(
-                Mathf.Cos(rad),
-                Mathf.Sin(rad),
-                0f);
-
-        Gizmos.DrawLine(
+        Gizmos.DrawWireCube(
             transform.position,
-            transform.position + dir * 3f);
-    }
-
-    private void DrawCircle(
-        Vector3 center,
-        float radius,
-        int segments)
-    {
-        float step = 360f / segments;
-
-        Vector3 prev =
-            center + new Vector3(radius, 0f);
-
-        for (int i = 1; i <= segments; i++)
-        {
-            float angle =
-                step * i * Mathf.Deg2Rad;
-
-            Vector3 next =
-                center +
-                new Vector3(
-                    Mathf.Cos(angle) * radius,
-                    Mathf.Sin(angle) * radius);
-
-            Gizmos.DrawLine(prev, next);
-
-            prev = next;
-        }
+            fixedZoneSize);
     }
 }
 

@@ -11,7 +11,7 @@ TagManager:
   - ground
   - Water
   - UI
-  - 
+  - Hazard
   - 
   - 
   - 
@@ -61,6 +61,9 @@ TagManager:
     locked: 0
   - name: back07
     uniqueID: 2149980491
+    locked: 0
+  - name: bg tile
+    uniqueID: 3147010613
     locked: 0
   - name: ground main
     uniqueID: 2107047573

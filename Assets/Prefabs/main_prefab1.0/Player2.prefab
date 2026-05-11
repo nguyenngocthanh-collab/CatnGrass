@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 7005644522590355783}
   - component: {fileID: 8655381411930511849}
   - component: {fileID: 6053300514170850566}
+  - component: {fileID: 412064351022755189}
   m_Layer: 3
   m_Name: Player2
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -89,7 +90,19 @@ MonoBehaviour:
       m_Calls: []
   OnDeath:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: DeathMenu, Assembly-CSharp
+        m_MethodName: ShowDeathScreen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &6053300514170850566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -107,6 +120,29 @@ MonoBehaviour:
   health: {fileID: 8655381411930511849}
   checkpoint: {fileID: 0}
   respawnDelay: 1.5
+--- !u!114 &412064351022755189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5035140138061966390}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 630975f238305a24593cb5a1a160a214, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  safeGroundLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  hazardLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  defaultSpawnPoint: {fileID: 0}
+  safePointUpdateInterval: 0.5
+  stabilityTime: 0.3
+  respawnDelay: 1
+  invincibleAfterRespawn: 2
 --- !u!1001 &751243629651503780
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -171,13 +207,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: IMG_1443
       objectReference: {fileID: 0}
+    - target: {fileID: 7019657183401826598, guid: 795dfe39c517a6b4dbeb7272ceb22af4, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 7835658645019203258, guid: 795dfe39c517a6b4dbeb7272ceb22af4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 4.3
       objectReference: {fileID: 0}
     - target: {fileID: 7835658645019203258, guid: 795dfe39c517a6b4dbeb7272ceb22af4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.44
       objectReference: {fileID: 0}
     - target: {fileID: 7835658645019203258, guid: 795dfe39c517a6b4dbeb7272ceb22af4, type: 3}
       propertyPath: m_LocalPosition.z
@@ -229,7 +269,10 @@ PrefabInstance:
     m_RemovedGameObjects:
     - {fileID: 5239702805023300061, guid: 795dfe39c517a6b4dbeb7272ceb22af4, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7019657183401826598, guid: 795dfe39c517a6b4dbeb7272ceb22af4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 9091046209396100465}
   m_SourcePrefab: {fileID: 100100000, guid: 795dfe39c517a6b4dbeb7272ceb22af4, type: 3}
 --- !u!4 &7408753560075222046 stripped
 Transform:
@@ -241,6 +284,29 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7019657183401826598, guid: 795dfe39c517a6b4dbeb7272ceb22af4, type: 3}
   m_PrefabInstance: {fileID: 751243629651503780}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &9091046209396100465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7711887824257577858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 630975f238305a24593cb5a1a160a214, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  safeGroundLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  hazardLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  defaultSpawnPoint: {fileID: 0}
+  safePointUpdateInterval: 0.5
+  stabilityTime: 0.3
+  respawnDelay: 0.2
+  invincibleAfterRespawn: 2
 --- !u!114 &8591626259050889192 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9031795975047501132, guid: 795dfe39c517a6b4dbeb7272ceb22af4, type: 3}
@@ -318,7 +384,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7525920661849080597, guid: 68baf0799e0e4bf43a0b7b33a1b1c5b6, type: 3}
       propertyPath: m_SortingLayer
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7525920661849080597, guid: 68baf0799e0e4bf43a0b7b33a1b1c5b6, type: 3}
       propertyPath: m_SortingLayerID

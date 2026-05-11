@@ -1,60 +1,184 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using UnityEngine.Events;
 
 /// <summary>
-/// Component chung — g?n lên Player, Enemy, hay b?t k? object nào có HP.
-/// Không ch?a logic ch?t; delegate sang DeathHandler ?? d? swap.
+/// Component HP dÃ¹ng chung cho:
+/// - Player
+/// - Enemy
+/// - Boss
+/// - Anything cÃ³ mÃ¡u
+///
+/// KHÃ”NG chá»©a UI.
+/// KHÃ”NG chá»©a respawn.
+/// KHÃ”NG chá»©a game over.
+///
+/// Chá»‰ quáº£n lÃ½:
+/// - HP
+/// - Damage
+/// - Heal
+/// - Death
+/// - Invincible
 /// </summary>
+
 public class HealthSystem : MonoBehaviour, IDamageable
 {
-    [Header("Stats")]
-    [SerializeField] private int maxHP = 3;
+    // =====================================================
+    // STATS
+    // =====================================================
 
-    [Header("Events — kéo listener vào ?ây trong Inspector")]
-    public UnityEvent<int, int> OnHPChanged;   // (currentHP, maxHP)
+    [Header("Stats")]
+
+    [SerializeField]
+    private int maxHP = 3;
+
+    // =====================================================
+    // EVENTS
+    // =====================================================
+
+    [Header("Events")]
+
+    // currentHP, maxHP
+    public UnityEvent<int, int> OnHPChanged;
+
     public UnityEvent OnDeath;
 
+    // =====================================================
+    // INTERNAL
+    // =====================================================
+
     private int currentHP;
+
     private bool isDead;
 
+    private bool invincible;
+
+    // =====================================================
+    // PROPERTIES
+    // =====================================================
+
     public int CurrentHP => currentHP;
+
     public int MaxHP => maxHP;
+
     public bool IsDead => isDead;
 
-    void Awake() => currentHP = maxHP;
+    public bool IsInvincible => invincible;
 
-    // ?? Public API ???????????????????????????????????????????????
+    // =====================================================
+    // UNITY
+    // =====================================================
+
+    private void Awake()
+    {
+        currentHP = maxHP;
+    }
+
+    // =====================================================
+    // DAMAGE
+    // =====================================================
 
     public void TakeDamage(int amount)
     {
-        if (isDead || amount <= 0) return;
+        if (isDead ||
+            invincible ||
+            amount <= 0)
+        {
+            return;
+        }
 
-        currentHP = Mathf.Max(currentHP - amount, 0);
-        OnHPChanged.Invoke(currentHP, maxHP);
+        currentHP =
+            Mathf.Max(
+                currentHP - amount,
+                0);
 
-        if (currentHP == 0) Die();
+        OnHPChanged?.Invoke(
+            currentHP,
+            maxHP);
+
+        if (currentHP <= 0)
+        {
+            Die();
+        }
     }
+
+    // =====================================================
+    // HEAL
+    // =====================================================
 
     public void Heal(int amount)
     {
-        if (isDead || amount <= 0) return;
+        if (isDead || amount <= 0)
+            return;
 
-        currentHP = Mathf.Min(currentHP + amount, maxHP);
-        OnHPChanged.Invoke(currentHP, maxHP);
+        currentHP =
+            Mathf.Min(
+                currentHP + amount,
+                maxHP);
+
+        OnHPChanged?.Invoke(
+            currentHP,
+            maxHP);
     }
+
+    // =====================================================
+    // RESET FULL HP
+    // =====================================================
 
     public void ResetHP()
     {
         isDead = false;
+
         currentHP = maxHP;
-        OnHPChanged.Invoke(currentHP, maxHP);
+
+        OnHPChanged?.Invoke(
+            currentHP,
+            maxHP);
     }
 
-    // ?? Internal ?????????????????????????????????????????????????
+    // =====================================================
+    // SET HP
+    // =====================================================
+
+    public void SetHP(int hp)
+    {
+        currentHP =
+            Mathf.Clamp(
+                hp,
+                0,
+                maxHP);
+
+        isDead = currentHP <= 0;
+
+        OnHPChanged?.Invoke(
+            currentHP,
+            maxHP);
+
+        if (isDead)
+        {
+            OnDeath?.Invoke();
+        }
+    }
+
+    // =====================================================
+    // INVINCIBLE
+    // =====================================================
+
+    public void SetInvincible(bool value)
+    {
+        invincible = value;
+    }
+
+    // =====================================================
+    // DEATH
+    // =====================================================
 
     private void Die()
     {
+        if (isDead)
+            return;
+
         isDead = true;
-        OnDeath.Invoke();
+
+        OnDeath?.Invoke();
     }
 }
