@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2676424065198010364}
   - component: {fileID: 4773023301774367128}
   - component: {fileID: 452865460118640839}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MeteorSmoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4860,7 +4860,7 @@ GameObject:
   - component: {fileID: 2389494873360912091}
   - component: {fileID: 588190085810346927}
   - component: {fileID: 3307653949986671439}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Meteor
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -72,7 +72,7 @@ public class Meteor : MonoBehaviour
 
         _rb.gravityScale = 0f;
         _rb.freezeRotation = false;
-        _rb.linearVelocity = Vector2.zero;   // đứng im
+        _rb.linearVelocity = Vector2.zero;
         _rb.angularVelocity = 0f;
     }
 
@@ -83,9 +83,13 @@ public class Meteor : MonoBehaviour
         float size = Random.Range(_minSize, _maxSize);
         transform.localScale = Vector3.one * size;
 
-        // Xoay meteor theo hướng bay (visual)
-        float angle = Mathf.Atan2(_velocity.y, _velocity.x) * Mathf.Rad2Deg - 90f;
-        transform.rotation = Quaternion.Euler(0f, 0f, angle);
+        // Xoay meteor theo hướng bay
+        float angle =
+            Mathf.Atan2(_velocity.y, _velocity.x) *
+            Mathf.Rad2Deg - 90f;
+
+        transform.rotation =
+            Quaternion.Euler(0f, 0f, angle);
 
         if (hideWhileHolding)
             _sr.enabled = false;
@@ -102,8 +106,10 @@ public class Meteor : MonoBehaviour
         if (!_launched)
         {
             _holdElapsed += Time.deltaTime;
+
             if (_holdElapsed >= holdTime)
                 Launch();
+
             return;
         }
 
@@ -112,13 +118,16 @@ public class Meteor : MonoBehaviour
             if (IsInsideViewport())
             {
                 _entered = true;
+
                 DestroyWarning();
             }
         }
         else
         {
             if (!IsInsideViewport(2f))
+            {
                 Destroy(gameObject);
+            }
         }
     }
 
@@ -126,9 +135,13 @@ public class Meteor : MonoBehaviour
     private void Launch()
     {
         _launched = true;
+
         _sr.enabled = true;
+
         _rb.linearVelocity = _velocity;
-        _rb.angularVelocity = Random.Range(-180f, 180f);
+
+        _rb.angularVelocity =
+            Random.Range(-180f, 180f);
     }
 
     // ── Warning ───────────────────────────────────────────
@@ -137,17 +150,27 @@ public class Meteor : MonoBehaviour
         _warningInstance = Instantiate(
             warningIndicatorPrefab,
             Vector3.zero,
-            Quaternion.identity);          // KHÔNG xoay
+            Quaternion.identity);
 
-        _warningInstance.transform.localScale = Vector3.one * warningScale;
+        _warningInstance.transform.localScale =
+            Vector3.one * warningScale;
 
-        var wsr = _warningInstance.GetComponent<SpriteRenderer>();
-        if (wsr != null) wsr.color = warningColor;
+        var wsr =
+            _warningInstance.GetComponent<SpriteRenderer>();
 
-        var blink = _warningInstance.AddComponent<WarningBlinker>();
+        if (wsr != null)
+        {
+            wsr.color = warningColor;
+        }
+
+        var blink =
+            _warningInstance.AddComponent<WarningBlinker>();
+
         blink.Init(warningBlinkInterval);
 
-        var tracker = _warningInstance.AddComponent<EdgeTracker>();
+        var tracker =
+            _warningInstance.AddComponent<EdgeTracker>();
+
         tracker.target = transform;
         tracker.padding = warningEdgePadding;
     }
@@ -157,6 +180,7 @@ public class Meteor : MonoBehaviour
         if (_warningInstance != null)
         {
             Destroy(_warningInstance);
+
             _warningInstance = null;
         }
     }
@@ -164,17 +188,42 @@ public class Meteor : MonoBehaviour
     // ── Viewport ──────────────────────────────────────────
     private bool IsInsideViewport(float margin = 0f)
     {
-        if (_cam == null) return true;
-        Vector3 vp = _cam.WorldToViewportPoint(transform.position);
-        return vp.x > -margin && vp.x < 1f + margin
-            && vp.y > -margin && vp.y < 1f + margin;
+        if (_cam == null)
+            return true;
+
+        Vector3 vp =
+            _cam.WorldToViewportPoint(transform.position);
+
+        return vp.x > -margin &&
+               vp.x < 1f + margin &&
+               vp.y > -margin &&
+               vp.y < 1f + margin;
     }
 
-    private void OnDestroy() => DestroyWarning();
+    // ── DEBUG ─────────────────────────────────────────────
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log(
+            "METEOR HIT: " +
+            collision.collider.name);
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        Debug.Log(
+            "METEOR TRIGGER: " +
+            other.name);
+    }
+
+    // ── DESTROY ───────────────────────────────────────────
+    private void OnDestroy()
+    {
+        DestroyWarning();
+    }
 }
 
 // =========================================================
-// WarningBlinker — nhấp nháy, KHÔNG tự hủy, KHÔNG xoay
+// WarningBlinker
 // =========================================================
 public class WarningBlinker : MonoBehaviour
 {
@@ -185,53 +234,85 @@ public class WarningBlinker : MonoBehaviour
     public void Init(float blinkInterval)
     {
         _interval = Mathf.Max(0.05f, blinkInterval);
+
         _sr = GetComponent<SpriteRenderer>();
     }
 
     private void Update()
     {
         _elapsed += Time.deltaTime;
+
         if (_sr != null)
-            _sr.enabled = (int)(_elapsed / _interval) % 2 == 0;
-        // Không tự Destroy — Meteor.cs chịu trách nhiệm
+        {
+            _sr.enabled =
+                (int)(_elapsed / _interval) % 2 == 0;
+        }
     }
 }
 
 // =========================================================
-// EdgeTracker — warning bám mép camera, KHÔNG xoay sprite
+// EdgeTracker
 // =========================================================
 public class EdgeTracker : MonoBehaviour
 {
     public Transform target;
-    [Range(0f, 0.3f)] public float padding = 0.06f;
+
+    [Range(0f, 0.3f)]
+    public float padding = 0.06f;
 
     private Camera _cam;
 
-    private void Start() => _cam = Camera.main;
+    private void Start()
+    {
+        _cam = Camera.main;
+    }
 
     private void LateUpdate()
     {
-        if (target == null) { Destroy(gameObject); return; }
-        if (_cam == null) return;
+        if (target == null)
+        {
+            Destroy(gameObject);
 
-        Vector3 vp = _cam.WorldToViewportPoint(target.position);
+            return;
+        }
 
-        bool inView = vp.x >= 0f && vp.x <= 1f
-                   && vp.y >= 0f && vp.y <= 1f
-                   && vp.z > 0f;
+        if (_cam == null)
+            return;
 
-        if (inView) { gameObject.SetActive(false); return; }
+        Vector3 vp =
+            _cam.WorldToViewportPoint(target.position);
+
+        bool inView =
+            vp.x >= 0f &&
+            vp.x <= 1f &&
+            vp.y >= 0f &&
+            vp.y <= 1f &&
+            vp.z > 0f;
+
+        if (inView)
+        {
+            gameObject.SetActive(false);
+
+            return;
+        }
 
         gameObject.SetActive(true);
 
-        vp.x = Mathf.Clamp(vp.x, padding, 1f - padding);
-        vp.y = Mathf.Clamp(vp.y, padding, 1f - padding);
+        vp.x =
+            Mathf.Clamp(vp.x, padding, 1f - padding);
 
-        float depth = Mathf.Abs(_cam.transform.position.z);
-        Vector3 world = _cam.ViewportToWorldPoint(new Vector3(vp.x, vp.y, depth));
+        vp.y =
+            Mathf.Clamp(vp.y, padding, 1f - padding);
+
+        float depth =
+            Mathf.Abs(_cam.transform.position.z);
+
+        Vector3 world =
+            _cam.ViewportToWorldPoint(
+                new Vector3(vp.x, vp.y, depth));
+
         world.z = 0f;
-        transform.position = world;
 
-        // KHÔNG set rotation
+        transform.position = world;
     }
 }

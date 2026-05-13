@@ -659,6 +659,23 @@ public class MeteorSpawner : MonoBehaviour
             transform.position,
             fixedZoneSize);
     }
+    public void SetDifficulty(
+    int newMinPerWave,
+    int newMaxPerWave,
+    float newMinInterval,
+    float newMaxInterval,
+    float newMinSpeed,
+    float newMaxSpeed)
+    {
+        minPerWave = newMinPerWave;
+        maxPerWave = newMaxPerWave;
+
+        minWaveInterval = newMinInterval;
+        maxWaveInterval = newMaxInterval;
+
+        minSpeed = newMinSpeed;
+        maxSpeed = newMaxSpeed;
+    }
 }
 
 // =========================================================

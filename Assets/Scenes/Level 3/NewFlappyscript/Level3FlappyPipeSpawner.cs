@@ -3,54 +3,81 @@
 public class Level3FlappyPipeSpawner : MonoBehaviour
 {
     [Header("Pipe Prefab")]
-    [SerializeField] private GameObject pipePrefab;
+
+    [SerializeField]
+    private GameObject pipePrefab;
+
+    [Header("Ghost Event")]
+
+    [SerializeField]
+    private GhostEventManager ghostEventManager;
 
     // =========================
     // SPEED
     // =========================
 
     [Header("Pipe Speed")]
-    [SerializeField] private float startPipeSpeed = 3f;
 
-    [SerializeField] private float speedIncreasePerSecond = 0.15f;
+    [SerializeField]
+    private float startPipeSpeed = 4f;
 
-    [SerializeField] private float maxPipeSpeed = 10f;
+    [SerializeField]
+    private float speedIncreasePerSecond = 0.07f;
+
+    [SerializeField]
+    private float maxPipeSpeed = 8f;
 
     // =========================
     // DISTANCE
     // =========================
 
     [Header("Distance Between Pipes")]
-    [SerializeField] private float distanceBetweenPipes = 8f;
+
+    [SerializeField]
+    private float distanceBetweenPipes = 10f;
 
     // =========================
     // HEIGHT
     // =========================
 
     [Header("Spawn Height")]
-    [SerializeField] private float startMinY = -2f;
 
-    [SerializeField] private float startMaxY = 2f;
+    [SerializeField]
+    private float startMinY = -1.8f;
 
-    [SerializeField] private float heightExpandPerSecond = 0.1f;
+    [SerializeField]
+    private float startMaxY = 1.8f;
 
-    [SerializeField] private float maxHeightLimit = 5f;
+    [SerializeField]
+    private float heightExpandPerSecond = 0.03f;
+
+    [SerializeField]
+    private float maxHeightLimit = 3.5f;
 
     // =========================
 
     private float currentPipeSpeed;
 
     private float currentMinY;
+
     private float currentMaxY;
 
     private float spawnTimer;
 
+    // expose speed cho ghost
+    public float CurrentPipeSpeed =>
+        currentPipeSpeed;
+
     private void Start()
     {
-        currentPipeSpeed = startPipeSpeed;
+        currentPipeSpeed =
+            startPipeSpeed;
 
-        currentMinY = startMinY;
-        currentMaxY = startMaxY;
+        currentMinY =
+            startMinY;
+
+        currentMaxY =
+            startMaxY;
     }
 
     private void Update()
@@ -66,9 +93,25 @@ public class Level3FlappyPipeSpawner : MonoBehaviour
 
         UpdateDifficulty();
 
-        // Spawn sync theo speed
+        // =========================
+        // BLOCK PIPE
+        // =========================
+
+        if (ghostEventManager != null &&
+            ghostEventManager.BlockPipeSpawn)
+        {
+            spawnTimer = 0f;
+
+            return;
+        }
+
+        // =========================
+        // SPAWN
+        // =========================
+
         float currentSpawnRate =
-            distanceBetweenPipes / currentPipeSpeed;
+            distanceBetweenPipes /
+            currentPipeSpeed;
 
         spawnTimer += Time.deltaTime;
 
@@ -82,9 +125,9 @@ public class Level3FlappyPipeSpawner : MonoBehaviour
 
     private void UpdateDifficulty()
     {
-        // SPEED TĂNG DẦN
         currentPipeSpeed +=
-            speedIncreasePerSecond * Time.deltaTime;
+            speedIncreasePerSecond *
+            Time.deltaTime;
 
         currentPipeSpeed =
             Mathf.Clamp(
@@ -93,12 +136,13 @@ public class Level3FlappyPipeSpawner : MonoBehaviour
                 maxPipeSpeed
             );
 
-        // HEIGHT RANGE MỞ RỘNG DẦN
         currentMaxY +=
-            heightExpandPerSecond * Time.deltaTime;
+            heightExpandPerSecond *
+            Time.deltaTime;
 
         currentMinY -=
-            heightExpandPerSecond * Time.deltaTime;
+            heightExpandPerSecond *
+            Time.deltaTime;
 
         currentMaxY =
             Mathf.Clamp(
@@ -119,13 +163,18 @@ public class Level3FlappyPipeSpawner : MonoBehaviour
     {
         if (pipePrefab == null)
         {
-            Debug.LogError("Pipe Prefab chưa assign!");
+            Debug.LogError(
+                "Pipe Prefab chưa assign!"
+            );
 
             return;
         }
 
         float randomY =
-            Random.Range(currentMinY, currentMaxY);
+            Random.Range(
+                currentMinY,
+                currentMaxY
+            );
 
         Vector3 spawnPosition =
             new Vector3(
@@ -142,11 +191,14 @@ public class Level3FlappyPipeSpawner : MonoBehaviour
             );
 
         Level3FlappyPipe pipeScript =
-            pipe.GetComponent<Level3FlappyPipe>();
+            pipe.GetComponent<
+                Level3FlappyPipe>();
 
         if (pipeScript != null)
         {
-            pipeScript.SetMoveSpeed(currentPipeSpeed);
+            pipeScript.SetMoveSpeed(
+                currentPipeSpeed
+            );
         }
     }
 }
