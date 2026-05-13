@@ -1,0 +1,780 @@
+fileFormatVersion: 2
+guid: 90c6aaa2166ada745958c5a9f140c92d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5675500801715514203
+    second: ngoisao_0
+  - first:
+      213: -878208982272230310
+    second: ngoisao_1
+  - first:
+      213: 7807806565898430798
+    second: ngoisao_2
+  - first:
+      213: -3992526982304607547
+    second: ngoisao_3
+  - first:
+      213: -4572550890606085346
+    second: ngoisao_4
+  - first:
+      213: 3015777924769490520
+    second: ngoisao_5
+  - first:
+      213: 712099255165706758
+    second: ngoisao_6
+  - first:
+      213: -2148528259826371977
+    second: ngoisao_7
+  - first:
+      213: -9112462888013098179
+    second: ngoisao_8
+  - first:
+      213: -5694551505752242389
+    second: ngoisao_9
+  - first:
+      213: -4077292071794506059
+    second: ngoisao_10
+  - first:
+      213: 4114003249534298043
+    second: ngoisao_11
+  - first:
+      213: -6847349330006031314
+    second: ngoisao_12
+  - first:
+      213: -3605052725335230713
+    second: ngoisao_13
+  - first:
+      213: 5462982023519903924
+    second: ngoisao_14
+  - first:
+      213: 2813824499471487272
+    second: ngoisao_15
+  - first:
+      213: -7872689201040353165
+    second: ngoisao_16
+  - first:
+      213: 507459506527374139
+    second: ngoisao_17
+  - first:
+      213: -7535928761661387607
+    second: ngoisao_18
+  - first:
+      213: 4868298124547322463
+    second: ngoisao_19
+  - first:
+      213: 4882707064602937726
+    second: ngoisao_20
+  - first:
+      213: 2164727242899986257
+    second: ngoisao_21
+  - first:
+      213: -4567112725392268319
+    second: ngoisao_22
+  - first:
+      213: 5164682254767883541
+    second: ngoisao_23
+  - first:
+      213: 9156700699555475705
+    second: ngoisao_24
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ngoisao_0
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 966
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a45d4747129c31b0800000000000000
+      internalID: -5675500801715514203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ngoisao_1
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 971
+        width: 15
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5c3b156599ffc3f0800000000000000
+      internalID: -878208982272230310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ngoisao_2
+      rect:
+        serializedVersion: 2
+        x: 1272
+        y: 901
+        width: 91
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e49a65344b6ea5c60800000000000000
+      internalID: 7807806565898430798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ngoisao_3
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 851
+        width: 103
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c25297ecd1b798c0800000000000000
+      internalID: -3992526982304607547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ngoisao_4
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 957
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1b370001390b80c0800000000000000
+      internalID: -4572550890606085346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ngoisao_5
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 932
+        width: 28
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 856a9575b023ad920800000000000000
+      internalID: 3015777924769490520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ngoisao_6
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 922
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 602e8fcef72e1e900800000000000000
+      internalID: 712099255165706758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ngoisao_7
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 918
+        width: 21
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 772392b5ee4ee22e0800000000000000
+      internalID: -2148528259826371977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ngoisao_8
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 810
+        width: 28
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d339c0388470a8180800000000000000
+      internalID: -9112462888013098179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ngoisao_9
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 829
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b27c8789393e8f0b0800000000000000
+      internalID: -5694551505752242389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ngoisao_10
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 824
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b60c2f867c8a67c0800000000000000
+      internalID: -4077292071794506059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ngoisao_11
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 806
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb76b459820e71930800000000000000
+      internalID: 4114003249534298043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ngoisao_12
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 812
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e244bfb201459f0a0800000000000000
+      internalID: -6847349330006031314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ngoisao_13
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 786
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 707f6dd85a748fdc0800000000000000
+      internalID: -3605052725335230713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ngoisao_14
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 793
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b0af3ec43960db40800000000000000
+      internalID: 5462982023519903924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ngoisao_15
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 780
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8211a475976bc0720800000000000000
+      internalID: 2813824499471487272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ngoisao_16
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 791
+        width: 20
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3789fe802e69eb290800000000000000
+      internalID: -7872689201040353165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ngoisao_17
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 780
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3b85788bbbda0700800000000000000
+      internalID: 507459506527374139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ngoisao_18
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 762
+        width: 23
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ac0684e7b00b6790800000000000000
+      internalID: -7535928761661387607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ngoisao_19
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 776
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f52f756d95baf8340800000000000000
+      internalID: 4868298124547322463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ngoisao_20
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 324
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e79c2ff943cd2c340800000000000000
+      internalID: 4882707064602937726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ngoisao_21
+      rect:
+        serializedVersion: 2
+        x: 634
+        y: 282
+        width: 54
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1571aac45f7aa0e10800000000000000
+      internalID: 2164727242899986257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ngoisao_22
+      rect:
+        serializedVersion: 2
+        x: 1379
+        y: 220
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e3e3d18c2b5e90c0800000000000000
+      internalID: -4567112725392268319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ngoisao_23
+      rect:
+        serializedVersion: 2
+        x: 1391
+        y: 151
+        width: 119
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5150435a523aca740800000000000000
+      internalID: 5164682254767883541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ngoisao_24
+      rect:
+        serializedVersion: 2
+        x: 1386
+        y: 196
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f0339f95c2231f70800000000000000
+      internalID: 9156700699555475705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      ngoisao_0: -5675500801715514203
+      ngoisao_1: -878208982272230310
+      ngoisao_10: -4077292071794506059
+      ngoisao_11: 4114003249534298043
+      ngoisao_12: -6847349330006031314
+      ngoisao_13: -3605052725335230713
+      ngoisao_14: 5462982023519903924
+      ngoisao_15: 2813824499471487272
+      ngoisao_16: -7872689201040353165
+      ngoisao_17: 507459506527374139
+      ngoisao_18: -7535928761661387607
+      ngoisao_19: 4868298124547322463
+      ngoisao_2: 7807806565898430798
+      ngoisao_20: 4882707064602937726
+      ngoisao_21: 2164727242899986257
+      ngoisao_22: -4567112725392268319
+      ngoisao_23: 5164682254767883541
+      ngoisao_24: 9156700699555475705
+      ngoisao_3: -3992526982304607547
+      ngoisao_4: -4572550890606085346
+      ngoisao_5: 3015777924769490520
+      ngoisao_6: 712099255165706758
+      ngoisao_7: -2148528259826371977
+      ngoisao_8: -9112462888013098179
+      ngoisao_9: -5694551505752242389
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
