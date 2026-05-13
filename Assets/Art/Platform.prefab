@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8349647097080987059}
   - component: {fileID: 8103539978455319356}
   - component: {fileID: 282843494884046531}
+  - component: {fileID: 8365061070649194016}
   m_Layer: 3
   m_Name: Platform
   m_TagString: Untagged
@@ -158,3 +159,18 @@ PlatformEffector2D:
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
+--- !u!114 &8365061070649194016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6643288058727406036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 461b1a9a534322e40b1dde2fc6828734, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waterPrefab: {fileID: 0}
+  spawnChance: 0.3
+  offset: {x: 0, y: 1, z: 0}

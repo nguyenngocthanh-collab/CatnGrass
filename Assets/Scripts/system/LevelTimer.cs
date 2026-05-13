@@ -17,15 +17,29 @@ public class LevelTimer : MonoBehaviour
 
     bool ending = false;
 
+    void Start()
+    {
+        // reset fade
+        if (fadeImage != null)
+        {
+            Color c = fadeImage.color;
+            c.a = 0f;
+            fadeImage.color = c;
+        }
+    }
+
     void Update()
     {
-        if (ending) return;
+        if (ending)
+            return;
 
         levelTime -= Time.deltaTime;
 
-        // Hết giờ
+        // fix timer âm
         if (levelTime <= 0f)
         {
+            levelTime = 0f;
+
             StartCoroutine(EndLevel());
         }
     }
@@ -34,14 +48,17 @@ public class LevelTimer : MonoBehaviour
     {
         ending = true;
 
+        // fade cũ
         yield return StartCoroutine(FadeBlack());
 
+        // load scene
         SceneManager.LoadScene(nextSceneName);
     }
 
     public void RestartLevel()
     {
-        if (ending) return;
+        if (ending)
+            return;
 
         StartCoroutine(RestartRoutine());
     }

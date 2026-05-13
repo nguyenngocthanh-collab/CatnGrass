@@ -1,8 +1,4 @@
-﻿// ===============================
-// Level3FlappyGameManager.cs
-// ===============================
-
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Level3FlappyGameManager : MonoBehaviour
@@ -15,6 +11,10 @@ public class Level3FlappyGameManager : MonoBehaviour
 
     [Header("Death")]
     [SerializeField] private float deathDelay = 0f;
+
+    [Header("Death Sound")]
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip deathSound;
 
     [Header("Timer")]
     [SerializeField] private float levelDuration = 120f;
@@ -131,6 +131,13 @@ public class Level3FlappyGameManager : MonoBehaviour
             return;
 
         IsDead = true;
+
+        // DEATH SOUND
+        if (audioSource != null &&
+            deathSound != null)
+        {
+            audioSource.PlayOneShot(deathSound);
+        }
 
         Invoke(nameof(ShowDeathPanel), deathDelay);
     }

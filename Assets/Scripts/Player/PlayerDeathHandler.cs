@@ -1,53 +1,54 @@
+using System.Collections;
 using UnityEngine;
 
 public class PlayerDeathHandler : MonoBehaviour
 {
-    public enum DeathMode { AnimationOnly, Respawn, GameOver }
+    [Header("Death Sound")]
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip deathSound;
 
-    [Header("Mode")]
-    [SerializeField] private DeathMode mode = DeathMode.AnimationOnly;
-
-    [Header("References")]
-    [SerializeField] private PlayerDead playerDead;
-    [SerializeField] private HealthSystem health;
-
-    [Header("Respawn Settings")]
+    [Header("Respawn")]
     [SerializeField] private Transform checkpoint;
     [SerializeField] private float respawnDelay = 1.5f;
 
-    void Awake()
+    private HealthSystem health;
+    private PlayerDead playerDead;
+    private Rigidbody2D rb;
+
+    private void Awake()
     {
-        if (health == null) health = GetComponent<HealthSystem>();
-        if (playerDead == null) playerDead = GetComponent<PlayerDead>();
+        health = GetComponent<HealthSystem>();
+        playerDead = GetComponent<PlayerDead>();
+        rb = GetComponent<Rigidbody2D>();
+
         health.OnDeath.AddListener(HandleDeath);
     }
 
-    public void SwitchMode(DeathMode newMode) => mode = newMode;
-
     private void HandleDeath()
     {
-        playerDead.TriggerDeath();
-        switch (mode)
-        {
-            case DeathMode.Respawn: StartCoroutine(RespawnRoutine()); break;
-            case DeathMode.GameOver: StartCoroutine(GameOverRoutine()); break;
-        }
+        // SOUND
+        if (audioSource != null && deathSound != null)
+            audioSource.PlayOneShot(deathSound);
+
+        // ANIMATION
+        if (playerDead != null)
+            playerDead.TriggerDeath();
+
+        // RESPAWN
+        StartCoroutine(RespawnRoutine());
     }
 
-    private System.Collections.IEnumerator RespawnRoutine()
+    private IEnumerator RespawnRoutine()
     {
         yield return new WaitForSeconds(respawnDelay);
-        if (checkpoint != null) transform.position = checkpoint.position;
+
+        if (checkpoint != null)
+            transform.position = checkpoint.position;
+
+        if (rb != null)
+            rb.linearVelocity = Vector2.zero;
+
         playerDead.ResetAlive();
         health.ResetHP();
-        var rb = GetComponent<Rigidbody2D>();
-        if (rb != null) rb.linearVelocity = Vector2.zero;
-    }
-
-    private System.Collections.IEnumerator GameOverRoutine()
-    {
-        yield return new WaitForSeconds(respawnDelay);
-        UnityEngine.SceneManagement.SceneManager.LoadScene(
-            UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);
     }
 }

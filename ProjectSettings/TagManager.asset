@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - Pipe
+  - Ambient
   layers:
   - Default
   - TransparentFX

@@ -7,11 +7,14 @@ public class MousePlayerDeathHandler : MonoBehaviour
 
     [Header("Visuals")]
     [SerializeField] private GameObject aliveVisual;
-
     [SerializeField] private GameObject deathVisual;
 
     [Header("UI")]
     [SerializeField] private DeathMenu deathMenu;
+
+    [Header("Death Sound")]
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip deathSound;
 
     private bool isDead = false;
 
@@ -41,6 +44,12 @@ public class MousePlayerDeathHandler : MonoBehaviour
         }
 
         isDead = true;
+
+        // DEATH SOUND
+        if (audioSource != null && deathSound != null)
+        {
+            audioSource.PlayOneShot(deathSound);
+        }
 
         if (aliveVisual == null)
         {

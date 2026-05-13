@@ -68,7 +68,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -205270267638800340, guid: 3b8d09b2cd459244799e805ba2241190, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 57c2eb490345933418d46b5083c4043b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -91,9 +91,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 0
+    m_Left: -87
     m_Right: 0
-    m_Top: 0
+    m_Top: -17
     m_Bottom: 0
   m_ChildAlignment: 4
   m_Spacing: -44.2

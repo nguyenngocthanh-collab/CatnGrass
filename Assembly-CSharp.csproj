@@ -66,6 +66,7 @@
     <Compile Include="Assets\Scenes\Level 3\NewFlappyscript\Level3FlappyEndingPortal.cs" />
     <Compile Include="Assets\Scripts\Player\playermovetest.cs" />
     <Compile Include="Assets\Scenes\Level 3\NewFlappyscript\Level3FlappyScreenClamp.cs" />
+    <Compile Include="Assets\Scripts\system\Level2EndingPortal.cs" />
     <Compile Include="Assets\Scripts\Player\RespawnHazard.cs" />
     <Compile Include="Assets\Scripts\Ui\LevelEndTrigger.cs" />
     <Compile Include="Assets\Scripts\camera\CameraFollow2D.cs" />
@@ -85,6 +86,7 @@
     <Compile Include="Assets\Scripts\camera\CameraFollowv2.cs" />
     <Compile Include="Assets\Scripts\Enemy\phaselv2\Hookenemy.cs" />
     <Compile Include="Assets\Scenes\Level 3\NewFlappyscript\Level3FlappyPipeSpawner.cs" />
+    <Compile Include="Assets\Scenes\Level2\RandomAmbientMove.cs" />
     <Compile Include="Assets\Scripts\Ui\PauseMenu.cs" />
     <Compile Include="Assets\Scenes\Level 3\NewFlappyscript\Level3FlappyParallax.cs" />
     <Compile Include="Assets\Scenes\Level 3\NewFlappyscript\EndingVideoController.cs" />
@@ -93,12 +95,16 @@
     <Compile Include="Assets\Scenes\Level 3\NewFlappyscript\Level3FlappyPipe.cs" />
     <Compile Include="Assets\Scripts\Enemy\phaselv2\WavePhaseManager.cs" />
     <Compile Include="Assets\Scripts\Enemy\phaselv2\WarningLineFX.cs" />
+    <Compile Include="Assets\Scenes\Level1\WaterBarUI.cs" />
+    <Compile Include="Assets\Scenes\Level1\WaterPickup.cs" />
+    <Compile Include="Assets\Scenes\Level1\PlatformWaterSpawner.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerDead.cs" />
     <Compile Include="Assets\Scenes\Level 3\NewFlappyscript\Level3FlappyBirdController.cs" />
     <Compile Include="Assets\Scripts\system\LevelTimer.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerClamp.cs" />
     <Compile Include="Assets\Scripts\camera\MeteorCinematicEvent.cs" />
     <Compile Include="Assets\Scripts\Player\HeartDisplay.cs" />
+    <Compile Include="Assets\Scenes\Level2\RandomAmbienceSpawner.cs" />
     <Compile Include="Assets\Scripts\Player\DebugDeath.cs" />
     <Compile Include="Assets\Scenes\Level 3\NewFlappyscript\GhostSpawner.cs" />
     <Compile Include="Assets\Scenes\Level 3\NewFlappyscript\Level3FlappyGameManager.cs" />
@@ -113,6 +119,8 @@
     <Compile Include="Assets\Scripts\Player\RespawnSystem02.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerAnimator.cs" />
     <Compile Include="Assets\Scripts\Enemy\Meteor\MeteorSmokeSetup.cs" />
+    <Compile Include="Assets\Scenes\Level1\WaterSystem.cs" />
+    <Compile Include="Assets\Scenes\Level2\RandomAmbientSpawner.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

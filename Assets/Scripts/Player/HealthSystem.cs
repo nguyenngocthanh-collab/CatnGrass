@@ -7,17 +7,6 @@ using UnityEngine.Events;
 /// - Enemy
 /// - Boss
 /// - Anything có máu
-///
-/// KHÔNG chứa UI.
-/// KHÔNG chứa respawn.
-/// KHÔNG chứa game over.
-///
-/// Chỉ quản lý:
-/// - HP
-/// - Damage
-/// - Heal
-/// - Death
-/// - Invincible
 /// </summary>
 
 public class HealthSystem : MonoBehaviour, IDamageable
@@ -27,9 +16,15 @@ public class HealthSystem : MonoBehaviour, IDamageable
     // =====================================================
 
     [Header("Stats")]
+    [SerializeField] private int maxHP = 3;
 
-    [SerializeField]
-    private int maxHP = 3;
+    // =====================================================
+    // SOUND
+    // =====================================================
+
+    [Header("Sound")]
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip hurtSound;
 
     // =====================================================
     // EVENTS
@@ -79,11 +74,18 @@ public class HealthSystem : MonoBehaviour, IDamageable
 
     public void TakeDamage(int amount)
     {
-        if (isDead ||
-            invincible ||
-            amount <= 0)
+        if (isDead || invincible || amount <= 0)
         {
             return;
+        }
+
+        // Hurt sound chỉ phát nếu chưa chết
+        if (currentHP > 1)
+        {
+            if (audioSource != null && hurtSound != null)
+            {
+                audioSource.PlayOneShot(hurtSound);
+            }
         }
 
         currentHP =

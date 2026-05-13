@@ -1008,7 +1008,7 @@ MonoBehaviour:
       retractSpeed: 0
       holdDuration: 0
   - type: 0
-    showGizmo: 1
+    showGizmo: 0
     spawnSide: 1
     randomSpawnSide: 0
     randomSidePool: 02000000030000000000000001000000
@@ -1104,7 +1104,7 @@ MonoBehaviour:
       retractSpeed: 0
       holdDuration: 0
   - type: 0
-    showGizmo: 1
+    showGizmo: 0
     spawnSide: 1
     randomSpawnSide: 0
     randomSidePool: 02000000030000000000000001000000
@@ -1136,11 +1136,11 @@ MonoBehaviour:
       retractSpeed: 0
       holdDuration: 0
   - type: 0
-    showGizmo: 1
+    showGizmo: 0
     spawnSide: 1
     randomSpawnSide: 0
     randomSidePool: 02000000030000000000000001000000
-    sideOffset: 0.372
+    sideOffset: 0.323
     randomSideOffset: 0
     aimOffset: 0
     randomAimOffset: 0
@@ -1158,6 +1158,678 @@ MonoBehaviour:
     spawnDelay: 74
     randomDelayRange: 0
     holdDuration: 4.5
+    warningFadeOut: 0.35
+    showWarningLine: 1
+    warningLineLength: 35.6
+    hookBehaviour:
+      axis: 0
+      castDistance: 0
+      castSpeed: 0
+      retractSpeed: 0
+      holdDuration: 0
+  - type: 0
+    showGizmo: 0
+    spawnSide: 1
+    randomSpawnSide: 0
+    randomSidePool: 02000000030000000000000001000000
+    sideOffset: -0.293
+    randomSideOffset: 0
+    aimOffset: -37
+    randomAimOffset: 0
+    randomAimMin: -45
+    randomAimMax: 45
+    speed: 10.1
+    randomSpeed: 0
+    randomSpeedMin: 4
+    randomSpeedMax: 8
+    minScale: 1
+    maxScale: 1
+    randomScale: 0
+    colliderSize: {x: 0, y: 0}
+    colliderOffset: {x: 0, y: 0}
+    spawnDelay: 82
+    randomDelayRange: 0
+    holdDuration: 1.06
+    warningFadeOut: 0.35
+    showWarningLine: 1
+    warningLineLength: 35.6
+    hookBehaviour:
+      axis: 0
+      castDistance: 0
+      castSpeed: 0
+      retractSpeed: 0
+      holdDuration: 0
+  - type: 0
+    showGizmo: 0
+    spawnSide: 1
+    randomSpawnSide: 0
+    randomSidePool: 02000000030000000000000001000000
+    sideOffset: -0.812
+    randomSideOffset: 0
+    aimOffset: -49
+    randomAimOffset: 0
+    randomAimMin: -45
+    randomAimMax: 45
+    speed: 10.1
+    randomSpeed: 0
+    randomSpeedMin: 4
+    randomSpeedMax: 8
+    minScale: 1
+    maxScale: 1
+    randomScale: 0
+    colliderSize: {x: 0, y: 0}
+    colliderOffset: {x: 0, y: 0}
+    spawnDelay: 82
+    randomDelayRange: 0
+    holdDuration: 1.06
+    warningFadeOut: 0.35
+    showWarningLine: 1
+    warningLineLength: 35.6
+    hookBehaviour:
+      axis: 0
+      castDistance: 0
+      castSpeed: 0
+      retractSpeed: 0
+      holdDuration: 0
+  - type: 0
+    showGizmo: 0
+    spawnSide: 1
+    randomSpawnSide: 0
+    randomSidePool: 02000000030000000000000001000000
+    sideOffset: 0.256
+    randomSideOffset: 0
+    aimOffset: 32
+    randomAimOffset: 0
+    randomAimMin: -45
+    randomAimMax: 45
+    speed: 10.1
+    randomSpeed: 0
+    randomSpeedMin: 4
+    randomSpeedMax: 8
+    minScale: 1
+    maxScale: 1
+    randomScale: 0
+    colliderSize: {x: 0, y: 0}
+    colliderOffset: {x: 0, y: 0}
+    spawnDelay: 82
+    randomDelayRange: 0
+    holdDuration: 1.06
+    warningFadeOut: 0.35
+    showWarningLine: 1
+    warningLineLength: 35.6
+    hookBehaviour:
+      axis: 0
+      castDistance: 0
+      castSpeed: 0
+      retractSpeed: 0
+      holdDuration: 0
+  - type: 0
+    showGizmo: 1
+    spawnSide: 1
+    randomSpawnSide: 0
+    randomSidePool: 02000000030000000000000001000000
+    sideOffset: 0.632
+    randomSideOffset: 0
+    aimOffset: 68
+    randomAimOffset: 0
+    randomAimMin: -45
+    randomAimMax: 45
+    speed: 10.1
+    randomSpeed: 0
+    randomSpeedMin: 4
+    randomSpeedMax: 8
+    minScale: 1
+    maxScale: 1
+    randomScale: 0
+    colliderSize: {x: 0, y: 0}
+    colliderOffset: {x: 0, y: 0}
+    spawnDelay: 84
+    randomDelayRange: 0
+    holdDuration: 1.06
+    warningFadeOut: 0.35
+    showWarningLine: 1
+    warningLineLength: 35.6
+    hookBehaviour:
+      axis: 0
+      castDistance: 0
+      castSpeed: 0
+      retractSpeed: 0
+      holdDuration: 0
+  - type: 0
+    showGizmo: 1
+    spawnSide: 2
+    randomSpawnSide: 0
+    randomSidePool: 02000000030000000000000001000000
+    sideOffset: -0.09
+    randomSideOffset: 0
+    aimOffset: 0
+    randomAimOffset: 0
+    randomAimMin: -45
+    randomAimMax: 45
+    speed: 10.1
+    randomSpeed: 0
+    randomSpeedMin: 4
+    randomSpeedMax: 8
+    minScale: 1
+    maxScale: 1
+    randomScale: 0
+    colliderSize: {x: 0, y: 0}
+    colliderOffset: {x: 0, y: 0}
+    spawnDelay: 84
+    randomDelayRange: 0
+    holdDuration: 1.06
+    warningFadeOut: 0.35
+    showWarningLine: 1
+    warningLineLength: 35.6
+    hookBehaviour:
+      axis: 0
+      castDistance: 0
+      castSpeed: 0
+      retractSpeed: 0
+      holdDuration: 0
+  - type: 0
+    showGizmo: 0
+    spawnSide: 3
+    randomSpawnSide: 0
+    randomSidePool: 02000000030000000000000001000000
+    sideOffset: -0.16
+    randomSideOffset: 0
+    aimOffset: 11
+    randomAimOffset: 0
+    randomAimMin: -45
+    randomAimMax: 45
+    speed: 10.1
+    randomSpeed: 0
+    randomSpeedMin: 4
+    randomSpeedMax: 8
+    minScale: 1
+    maxScale: 1
+    randomScale: 0
+    colliderSize: {x: 0, y: 0}
+    colliderOffset: {x: 0, y: 0}
+    spawnDelay: 84
+    randomDelayRange: 0
+    holdDuration: 1.06
+    warningFadeOut: 0.35
+    showWarningLine: 1
+    warningLineLength: 35.6
+    hookBehaviour:
+      axis: 0
+      castDistance: 0
+      castSpeed: 0
+      retractSpeed: 0
+      holdDuration: 0
+  - type: 0
+    showGizmo: 0
+    spawnSide: 3
+    randomSpawnSide: 0
+    randomSidePool: 02000000030000000000000001000000
+    sideOffset: -0.725
+    randomSideOffset: 0
+    aimOffset: 27
+    randomAimOffset: 0
+    randomAimMin: -45
+    randomAimMax: 45
+    speed: 10.1
+    randomSpeed: 0
+    randomSpeedMin: 4
+    randomSpeedMax: 8
+    minScale: 1
+    maxScale: 1
+    randomScale: 0
+    colliderSize: {x: 0, y: 0}
+    colliderOffset: {x: 0, y: 0}
+    spawnDelay: 84
+    randomDelayRange: 0
+    holdDuration: 1.06
+    warningFadeOut: 0.35
+    showWarningLine: 1
+    warningLineLength: 35.6
+    hookBehaviour:
+      axis: 0
+      castDistance: 0
+      castSpeed: 0
+      retractSpeed: 0
+      holdDuration: 0
+  - type: 0
+    showGizmo: 0
+    spawnSide: 0
+    randomSpawnSide: 0
+    randomSidePool: 02000000030000000000000001000000
+    sideOffset: -0.42
+    randomSideOffset: 0
+    aimOffset: 27
+    randomAimOffset: 0
+    randomAimMin: -45
+    randomAimMax: 45
+    speed: 10.1
+    randomSpeed: 0
+    randomSpeedMin: 4
+    randomSpeedMax: 8
+    minScale: 1
+    maxScale: 1
+    randomScale: 0
+    colliderSize: {x: 0, y: 0}
+    colliderOffset: {x: 0, y: 0}
+    spawnDelay: 86
+    randomDelayRange: 0
+    holdDuration: 1.06
+    warningFadeOut: 0.35
+    showWarningLine: 1
+    warningLineLength: 35.6
+    hookBehaviour:
+      axis: 0
+      castDistance: 0
+      castSpeed: 0
+      retractSpeed: 0
+      holdDuration: 0
+  - type: 0
+    showGizmo: 0
+    spawnSide: 0
+    randomSpawnSide: 0
+    randomSidePool: 02000000030000000000000001000000
+    sideOffset: 0.071
+    randomSideOffset: 0
+    aimOffset: 26
+    randomAimOffset: 0
+    randomAimMin: -45
+    randomAimMax: 45
+    speed: 10.1
+    randomSpeed: 0
+    randomSpeedMin: 4
+    randomSpeedMax: 8
+    minScale: 3.05
+    maxScale: 1
+    randomScale: 0
+    colliderSize: {x: 0, y: 0}
+    colliderOffset: {x: 0, y: 0}
+    spawnDelay: 86
+    randomDelayRange: 0
+    holdDuration: 1.06
+    warningFadeOut: 0.35
+    showWarningLine: 1
+    warningLineLength: 35.6
+    hookBehaviour:
+      axis: 0
+      castDistance: 0
+      castSpeed: 0
+      retractSpeed: 0
+      holdDuration: 0
+  - type: 0
+    showGizmo: 1
+    spawnSide: 2
+    randomSpawnSide: 0
+    randomSidePool: 02000000030000000000000001000000
+    sideOffset: -0.271
+    randomSideOffset: 0
+    aimOffset: -11
+    randomAimOffset: 0
+    randomAimMin: -45
+    randomAimMax: 45
+    speed: 10.1
+    randomSpeed: 0
+    randomSpeedMin: 4
+    randomSpeedMax: 8
+    minScale: 1
+    maxScale: 1
+    randomScale: 0
+    colliderSize: {x: 0, y: 0}
+    colliderOffset: {x: 0, y: 0}
+    spawnDelay: 90
+    randomDelayRange: 0
+    holdDuration: 1.06
+    warningFadeOut: 0.35
+    showWarningLine: 1
+    warningLineLength: 35.6
+    hookBehaviour:
+      axis: 0
+      castDistance: 0
+      castSpeed: 0
+      retractSpeed: 0
+      holdDuration: 0
+  - type: 0
+    showGizmo: 0
+    spawnSide: 2
+    randomSpawnSide: 0
+    randomSidePool: 02000000030000000000000001000000
+    sideOffset: 0.234
+    randomSideOffset: 0
+    aimOffset: 15
+    randomAimOffset: 0
+    randomAimMin: -45
+    randomAimMax: 45
+    speed: 10.1
+    randomSpeed: 0
+    randomSpeedMin: 4
+    randomSpeedMax: 8
+    minScale: 1
+    maxScale: 1
+    randomScale: 0
+    colliderSize: {x: 0, y: 0}
+    colliderOffset: {x: 0, y: 0}
+    spawnDelay: 90
+    randomDelayRange: 0
+    holdDuration: 1.06
+    warningFadeOut: 0.35
+    showWarningLine: 1
+    warningLineLength: 35.6
+    hookBehaviour:
+      axis: 0
+      castDistance: 0
+      castSpeed: 0
+      retractSpeed: 0
+      holdDuration: 0
+  - type: 0
+    showGizmo: 0
+    spawnSide: 2
+    randomSpawnSide: 0
+    randomSidePool: 02000000030000000000000001000000
+    sideOffset: 1
+    randomSideOffset: 0
+    aimOffset: 15
+    randomAimOffset: 0
+    randomAimMin: -45
+    randomAimMax: 45
+    speed: 10.1
+    randomSpeed: 0
+    randomSpeedMin: 4
+    randomSpeedMax: 8
+    minScale: 1
+    maxScale: 1
+    randomScale: 0
+    colliderSize: {x: 0, y: 0}
+    colliderOffset: {x: 0, y: 0}
+    spawnDelay: 90
+    randomDelayRange: 0
+    holdDuration: 1.06
+    warningFadeOut: 0.35
+    showWarningLine: 1
+    warningLineLength: 35.6
+    hookBehaviour:
+      axis: 0
+      castDistance: 0
+      castSpeed: 0
+      retractSpeed: 0
+      holdDuration: 0
+  - type: 0
+    showGizmo: 0
+    spawnSide: 0
+    randomSpawnSide: 0
+    randomSidePool: 02000000030000000000000001000000
+    sideOffset: -0.435
+    randomSideOffset: 0
+    aimOffset: 15
+    randomAimOffset: 0
+    randomAimMin: -45
+    randomAimMax: 45
+    speed: 10.1
+    randomSpeed: 0
+    randomSpeedMin: 4
+    randomSpeedMax: 8
+    minScale: 1
+    maxScale: 1
+    randomScale: 0
+    colliderSize: {x: 0, y: 0}
+    colliderOffset: {x: 0, y: 0}
+    spawnDelay: 90.5
+    randomDelayRange: 0
+    holdDuration: 1.06
+    warningFadeOut: 0.35
+    showWarningLine: 1
+    warningLineLength: 35.6
+    hookBehaviour:
+      axis: 0
+      castDistance: 0
+      castSpeed: 0
+      retractSpeed: 0
+      holdDuration: 0
+  - type: 0
+    showGizmo: 0
+    spawnSide: 0
+    randomSpawnSide: 0
+    randomSidePool: 02000000030000000000000001000000
+    sideOffset: 0.413
+    randomSideOffset: 0
+    aimOffset: -14
+    randomAimOffset: 0
+    randomAimMin: -45
+    randomAimMax: 45
+    speed: 10.1
+    randomSpeed: 0
+    randomSpeedMin: 4
+    randomSpeedMax: 8
+    minScale: 1
+    maxScale: 1
+    randomScale: 0
+    colliderSize: {x: 0, y: 0}
+    colliderOffset: {x: 0, y: 0}
+    spawnDelay: 90.5
+    randomDelayRange: 0
+    holdDuration: 1.06
+    warningFadeOut: 0.35
+    showWarningLine: 1
+    warningLineLength: 35.6
+    hookBehaviour:
+      axis: 0
+      castDistance: 0
+      castSpeed: 0
+      retractSpeed: 0
+      holdDuration: 0
+  - type: 0
+    showGizmo: 0
+    spawnSide: 2
+    randomSpawnSide: 0
+    randomSidePool: 02000000030000000000000001000000
+    sideOffset: -0.777
+    randomSideOffset: 0
+    aimOffset: -14
+    randomAimOffset: 0
+    randomAimMin: -45
+    randomAimMax: 45
+    speed: 10.1
+    randomSpeed: 0
+    randomSpeedMin: 4
+    randomSpeedMax: 8
+    minScale: 1
+    maxScale: 1
+    randomScale: 0
+    colliderSize: {x: 0, y: 0}
+    colliderOffset: {x: 0, y: 0}
+    spawnDelay: 90.5
+    randomDelayRange: 0
+    holdDuration: 1.06
+    warningFadeOut: 0.35
+    showWarningLine: 1
+    warningLineLength: 35.6
+    hookBehaviour:
+      axis: 0
+      castDistance: 0
+      castSpeed: 0
+      retractSpeed: 0
+      holdDuration: 0
+  - type: 0
+    showGizmo: 0
+    spawnSide: 2
+    randomSpawnSide: 0
+    randomSidePool: 02000000030000000000000001000000
+    sideOffset: -0.48
+    randomSideOffset: 0
+    aimOffset: -6
+    randomAimOffset: 0
+    randomAimMin: -45
+    randomAimMax: 45
+    speed: 6.06
+    randomSpeed: 0
+    randomSpeedMin: 4
+    randomSpeedMax: 8
+    minScale: 2.03
+    maxScale: 1
+    randomScale: 0
+    colliderSize: {x: 0, y: 0}
+    colliderOffset: {x: 0, y: 0}
+    spawnDelay: 95
+    randomDelayRange: 0
+    holdDuration: 1.06
+    warningFadeOut: 0.35
+    showWarningLine: 1
+    warningLineLength: 35.6
+    hookBehaviour:
+      axis: 0
+      castDistance: 0
+      castSpeed: 0
+      retractSpeed: 0
+      holdDuration: 0
+  - type: 0
+    showGizmo: 0
+    spawnSide: 2
+    randomSpawnSide: 0
+    randomSidePool: 02000000030000000000000001000000
+    sideOffset: 0.175
+    randomSideOffset: 0
+    aimOffset: 21
+    randomAimOffset: 0
+    randomAimMin: -45
+    randomAimMax: 45
+    speed: 6.06
+    randomSpeed: 0
+    randomSpeedMin: 4
+    randomSpeedMax: 8
+    minScale: 2.03
+    maxScale: 1
+    randomScale: 0
+    colliderSize: {x: 0, y: 0}
+    colliderOffset: {x: 0, y: 0}
+    spawnDelay: 95
+    randomDelayRange: 0
+    holdDuration: 1.06
+    warningFadeOut: 0.35
+    showWarningLine: 1
+    warningLineLength: 35.6
+    hookBehaviour:
+      axis: 0
+      castDistance: 0
+      castSpeed: 0
+      retractSpeed: 0
+      holdDuration: 0
+  - type: 0
+    showGizmo: 1
+    spawnSide: 2
+    randomSpawnSide: 0
+    randomSidePool: 02000000030000000000000001000000
+    sideOffset: 0.323
+    randomSideOffset: 0
+    aimOffset: 21
+    randomAimOffset: 0
+    randomAimMin: -45
+    randomAimMax: 45
+    speed: 6.06
+    randomSpeed: 0
+    randomSpeedMin: 4
+    randomSpeedMax: 8
+    minScale: 2.03
+    maxScale: 1
+    randomScale: 0
+    colliderSize: {x: 0, y: 0}
+    colliderOffset: {x: 0, y: 0}
+    spawnDelay: 100
+    randomDelayRange: 0
+    holdDuration: 1.06
+    warningFadeOut: 0.35
+    showWarningLine: 1
+    warningLineLength: 35.6
+    hookBehaviour:
+      axis: 0
+      castDistance: 0
+      castSpeed: 0
+      retractSpeed: 0
+      holdDuration: 0
+  - type: 0
+    showGizmo: 1
+    spawnSide: 2
+    randomSpawnSide: 0
+    randomSidePool: 02000000030000000000000001000000
+    sideOffset: 1
+    randomSideOffset: 0
+    aimOffset: 15
+    randomAimOffset: 0
+    randomAimMin: -45
+    randomAimMax: 45
+    speed: 6.06
+    randomSpeed: 0
+    randomSpeedMin: 4
+    randomSpeedMax: 8
+    minScale: 2.12
+    maxScale: 1
+    randomScale: 0
+    colliderSize: {x: 0, y: 0}
+    colliderOffset: {x: 0, y: 0}
+    spawnDelay: 100
+    randomDelayRange: 0
+    holdDuration: 1.06
+    warningFadeOut: 0.35
+    showWarningLine: 1
+    warningLineLength: 35.6
+    hookBehaviour:
+      axis: 0
+      castDistance: 0
+      castSpeed: 0
+      retractSpeed: 0
+      holdDuration: 0
+  - type: 0
+    showGizmo: 1
+    spawnSide: 1
+    randomSpawnSide: 0
+    randomSidePool: 02000000030000000000000001000000
+    sideOffset: 0.338
+    randomSideOffset: 0
+    aimOffset: 0
+    randomAimOffset: 0
+    randomAimMin: -45
+    randomAimMax: 45
+    speed: 6.06
+    randomSpeed: 0
+    randomSpeedMin: 4
+    randomSpeedMax: 8
+    minScale: 2.12
+    maxScale: 1
+    randomScale: 0
+    colliderSize: {x: 0, y: 0}
+    colliderOffset: {x: 0, y: 0}
+    spawnDelay: 104
+    randomDelayRange: 0
+    holdDuration: 1.31
+    warningFadeOut: 0.35
+    showWarningLine: 1
+    warningLineLength: 35.6
+    hookBehaviour:
+      axis: 0
+      castDistance: 0
+      castSpeed: 0
+      retractSpeed: 0
+      holdDuration: 0
+  - type: 0
+    showGizmo: 1
+    spawnSide: 1
+    randomSpawnSide: 0
+    randomSidePool: 02000000030000000000000001000000
+    sideOffset: -0.346
+    randomSideOffset: 0
+    aimOffset: 0
+    randomAimOffset: 0
+    randomAimMin: -45
+    randomAimMax: 45
+    speed: 6.06
+    randomSpeed: 0
+    randomSpeedMin: 4
+    randomSpeedMax: 8
+    minScale: 2.12
+    maxScale: 1
+    randomScale: 0
+    colliderSize: {x: 0, y: 0}
+    colliderOffset: {x: 0, y: 0}
+    spawnDelay: 104
+    randomDelayRange: 0
+    holdDuration: 1.31
     warningFadeOut: 0.35
     showWarningLine: 1
     warningLineLength: 35.6

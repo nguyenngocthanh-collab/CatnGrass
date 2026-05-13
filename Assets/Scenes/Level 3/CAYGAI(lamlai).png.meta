@@ -1,0 +1,1040 @@
+fileFormatVersion: 2
+guid: a24eb19ad30c6c041880365ab3b295b7
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5621821996130822145
+    second: CAYGAI(lamlai)_0
+  - first:
+      213: -2051451706703734161
+    second: CAYGAI(lamlai)_1
+  - first:
+      213: 7970618633303095139
+    second: CAYGAI(lamlai)_2
+  - first:
+      213: 8615394547363183836
+    second: CAYGAI(lamlai)_3
+  - first:
+      213: -8857976217660716928
+    second: CAYGAI(lamlai)_4
+  - first:
+      213: 2020740691852923229
+    second: CAYGAI(lamlai)_5
+  - first:
+      213: 590666888558154855
+    second: CAYGAI(lamlai)_6
+  - first:
+      213: -5003850385716791967
+    second: CAYGAI(lamlai)_7
+  - first:
+      213: -7389157914371747690
+    second: CAYGAI(lamlai)_8
+  - first:
+      213: 4749230290078398823
+    second: CAYGAI(lamlai)_9
+  - first:
+      213: 8982093878020960407
+    second: CAYGAI(lamlai)_10
+  - first:
+      213: 6922925014788048740
+    second: CAYGAI(lamlai)_11
+  - first:
+      213: 781108970844699634
+    second: CAYGAI(lamlai)_12
+  - first:
+      213: 3824116021352212473
+    second: CAYGAI(lamlai)_13
+  - first:
+      213: -3848978935661207315
+    second: CAYGAI(lamlai)_14
+  - first:
+      213: -258264175672460724
+    second: CAYGAI(lamlai)_15
+  - first:
+      213: 3783386766279558786
+    second: CAYGAI(lamlai)_16
+  - first:
+      213: 9085900023371375029
+    second: CAYGAI(lamlai)_17
+  - first:
+      213: -7652748685661059161
+    second: CAYGAI(lamlai)_18
+  - first:
+      213: 3477424876651731957
+    second: CAYGAI(lamlai)_19
+  - first:
+      213: 1090847552177619287
+    second: CAYGAI(lamlai)_20
+  - first:
+      213: -4841862978983067595
+    second: CAYGAI(lamlai)_21
+  - first:
+      213: 7771067239156565195
+    second: CAYGAI(lamlai)_22
+  - first:
+      213: 8166665394281809509
+    second: CAYGAI(lamlai)_23
+  - first:
+      213: -2862740896351856515
+    second: CAYGAI(lamlai)_24
+  - first:
+      213: -8796172243280652269
+    second: CAYGAI(lamlai)_25
+  - first:
+      213: -692353908041967770
+    second: CAYGAI(lamlai)_26
+  - first:
+      213: -5473009815100405560
+    second: CAYGAI(lamlai)_27
+  - first:
+      213: 1718301472540239052
+    second: CAYGAI(lamlai)_28
+  - first:
+      213: -5584919015964276359
+    second: CAYGAI(lamlai)_29
+  - first:
+      213: 4235431626354422827
+    second: CAYGAI(lamlai)_30
+  - first:
+      213: 286965584520727120
+    second: CAYGAI(lamlai)_31
+  - first:
+      213: 5340849565783502836
+    second: CAYGAI(lamlai)_32
+  - first:
+      213: -1826259796296895664
+    second: CAYGAI(lamlai)_33
+  - first:
+      213: 8454244121572065603
+    second: CAYGAI(lamlai)_34
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: CAYGAI(lamlai)_0
+      rect:
+        serializedVersion: 2
+        x: 659
+        y: 1490
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff715222ea64bf1b0800000000000000
+      internalID: -5621821996130822145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CAYGAI(lamlai)_1
+      rect:
+        serializedVersion: 2
+        x: 661
+        y: 1470
+        width: 56
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6a1e04ba87c783e0800000000000000
+      internalID: -2051451706703734161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CAYGAI(lamlai)_2
+      rect:
+        serializedVersion: 2
+        x: 663
+        y: 1497
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 367f326ba635d9e60800000000000000
+      internalID: 7970618633303095139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CAYGAI(lamlai)_3
+      rect:
+        serializedVersion: 2
+        x: 683
+        y: 4
+        width: 799
+        height: 2044
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cdc7b6bc1b7009770800000000000000
+      internalID: 8615394547363183836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CAYGAI(lamlai)_4
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 1451
+        width: 23
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0888975cf85221580800000000000000
+      internalID: -8857976217660716928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CAYGAI(lamlai)_5
+      rect:
+        serializedVersion: 2
+        x: 606
+        y: 1187
+        width: 12
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d511211f3fc1b0c10800000000000000
+      internalID: 2020740691852923229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CAYGAI(lamlai)_6
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 1181
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7641819d768723800800000000000000
+      internalID: 590666888558154855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CAYGAI(lamlai)_7
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 1114
+        width: 61
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1653622f590ce8ab0800000000000000
+      internalID: -5003850385716791967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CAYGAI(lamlai)_8
+      rect:
+        serializedVersion: 2
+        x: 618
+        y: 1173
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6901b9cb600747990800000000000000
+      internalID: -7389157914371747690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CAYGAI(lamlai)_9
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 1170
+        width: 12
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 769f5ac49c7a8e140800000000000000
+      internalID: 4749230290078398823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CAYGAI(lamlai)_10
+      rect:
+        serializedVersion: 2
+        x: 637
+        y: 1156
+        width: 21
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79076aafacec6ac70800000000000000
+      internalID: 8982093878020960407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CAYGAI(lamlai)_11
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 1159
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4678b192f9b231060800000000000000
+      internalID: 6922925014788048740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CAYGAI(lamlai)_12
+      rect:
+        serializedVersion: 2
+        x: 569
+        y: 1139
+        width: 13
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2fbb112787e07da00800000000000000
+      internalID: 781108970844699634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CAYGAI(lamlai)_13
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 1142
+        width: 17
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f72498a24df11530800000000000000
+      internalID: 3824116021352212473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CAYGAI(lamlai)_14
+      rect:
+        serializedVersion: 2
+        x: 659
+        y: 1148
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de0e3fffc0ea59ac0800000000000000
+      internalID: -3848978935661207315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CAYGAI(lamlai)_15
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 1140
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4a75deb9167a6cf0800000000000000
+      internalID: -258264175672460724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CAYGAI(lamlai)_16
+      rect:
+        serializedVersion: 2
+        x: 637
+        y: 1130
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 286c10cf73a418430800000000000000
+      internalID: 3783386766279558786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CAYGAI(lamlai)_17
+      rect:
+        serializedVersion: 2
+        x: 650
+        y: 1141
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b1a3cd9ee9971e70800000000000000
+      internalID: 9085900023371375029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CAYGAI(lamlai)_18
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 1128
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a7c5dbcd99fbc590800000000000000
+      internalID: -7652748685661059161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CAYGAI(lamlai)_19
+      rect:
+        serializedVersion: 2
+        x: 573
+        y: 1124
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5fbdee9408b424030800000000000000
+      internalID: 3477424876651731957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CAYGAI(lamlai)_20
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 1110
+        width: 32
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 751c6a3b118732f00800000000000000
+      internalID: 1090847552177619287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CAYGAI(lamlai)_21
+      rect:
+        serializedVersion: 2
+        x: 634
+        y: 1114
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 530899e164f3eccb0800000000000000
+      internalID: -4841862978983067595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CAYGAI(lamlai)_22
+      rect:
+        serializedVersion: 2
+        x: 641
+        y: 1116
+        width: 11
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc44a9b2b7068db60800000000000000
+      internalID: 7771067239156565195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CAYGAI(lamlai)_23
+      rect:
+        serializedVersion: 2
+        x: 1361
+        y: 1118
+        width: 11
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56684a148e2d55170800000000000000
+      internalID: 8166665394281809509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CAYGAI(lamlai)_24
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 1057
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d78d6fc72508548d0800000000000000
+      internalID: -2862740896351856515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CAYGAI(lamlai)_25
+      rect:
+        serializedVersion: 2
+        x: 517
+        y: 1056
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3181b18e2f7bde580800000000000000
+      internalID: -8796172243280652269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CAYGAI(lamlai)_26
+      rect:
+        serializedVersion: 2
+        x: 610
+        y: 962
+        width: 74
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6671e44f9c34466f0800000000000000
+      internalID: -692353908041967770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CAYGAI(lamlai)_27
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 993
+        width: 12
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c8c6b60296fb04b0800000000000000
+      internalID: -5473009815100405560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CAYGAI(lamlai)_28
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 818
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc4aac7d512a8d710800000000000000
+      internalID: 1718301472540239052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CAYGAI(lamlai)_29
+      rect:
+        serializedVersion: 2
+        x: 489
+        y: 802
+        width: 6
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9790022ceb16e72b0800000000000000
+      internalID: -5584919015964276359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CAYGAI(lamlai)_30
+      rect:
+        serializedVersion: 2
+        x: 1466
+        y: 678
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b247f47bf9647ca30800000000000000
+      internalID: 4235431626354422827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CAYGAI(lamlai)_31
+      rect:
+        serializedVersion: 2
+        x: 1414
+        y: 665
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05ace10cda18bf300800000000000000
+      internalID: 286965584520727120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CAYGAI(lamlai)_32
+      rect:
+        serializedVersion: 2
+        x: 1446
+        y: 663
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ff235f02628e1a40800000000000000
+      internalID: 5340849565783502836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CAYGAI(lamlai)_33
+      rect:
+        serializedVersion: 2
+        x: 1446
+        y: 651
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05375262462d7a6e0800000000000000
+      internalID: -1826259796296895664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CAYGAI(lamlai)_34
+      rect:
+        serializedVersion: 2
+        x: 1466
+        y: 655
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 341ccbe6c32835570800000000000000
+      internalID: 8454244121572065603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      CAYGAI(lamlai)_0: -5621821996130822145
+      CAYGAI(lamlai)_1: -2051451706703734161
+      CAYGAI(lamlai)_10: 8982093878020960407
+      CAYGAI(lamlai)_11: 6922925014788048740
+      CAYGAI(lamlai)_12: 781108970844699634
+      CAYGAI(lamlai)_13: 3824116021352212473
+      CAYGAI(lamlai)_14: -3848978935661207315
+      CAYGAI(lamlai)_15: -258264175672460724
+      CAYGAI(lamlai)_16: 3783386766279558786
+      CAYGAI(lamlai)_17: 9085900023371375029
+      CAYGAI(lamlai)_18: -7652748685661059161
+      CAYGAI(lamlai)_19: 3477424876651731957
+      CAYGAI(lamlai)_2: 7970618633303095139
+      CAYGAI(lamlai)_20: 1090847552177619287
+      CAYGAI(lamlai)_21: -4841862978983067595
+      CAYGAI(lamlai)_22: 7771067239156565195
+      CAYGAI(lamlai)_23: 8166665394281809509
+      CAYGAI(lamlai)_24: -2862740896351856515
+      CAYGAI(lamlai)_25: -8796172243280652269
+      CAYGAI(lamlai)_26: -692353908041967770
+      CAYGAI(lamlai)_27: -5473009815100405560
+      CAYGAI(lamlai)_28: 1718301472540239052
+      CAYGAI(lamlai)_29: -5584919015964276359
+      CAYGAI(lamlai)_3: 8615394547363183836
+      CAYGAI(lamlai)_30: 4235431626354422827
+      CAYGAI(lamlai)_31: 286965584520727120
+      CAYGAI(lamlai)_32: 5340849565783502836
+      CAYGAI(lamlai)_33: -1826259796296895664
+      CAYGAI(lamlai)_34: 8454244121572065603
+      CAYGAI(lamlai)_4: -8857976217660716928
+      CAYGAI(lamlai)_5: 2020740691852923229
+      CAYGAI(lamlai)_6: 590666888558154855
+      CAYGAI(lamlai)_7: -5003850385716791967
+      CAYGAI(lamlai)_8: -7389157914371747690
+      CAYGAI(lamlai)_9: 4749230290078398823
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
