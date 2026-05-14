@@ -1644,7 +1644,7 @@ MonoBehaviour:
   startPipeSpeed: 3
   speedIncreasePerSecond: 0.05
   maxPipeSpeed: 10
-  distanceBetweenPipes: 10.49
+  distanceBetweenPipes: 9.63
   startMinY: -2
   startMaxY: 2
   heightExpandPerSecond: 0.1
@@ -1929,7 +1929,7 @@ MonoBehaviour:
   deathDelay: 0
   audioSource: {fileID: 2022915527}
   deathSound: {fileID: 8300000, guid: 22603adf25bf5a446ab1e06cee1463ac, type: 3}
-  levelDuration: 127
+  levelDuration: 90
   portal: {fileID: 508155438}
   portalSpawnTime: 5
 --- !u!4 &1316341670
@@ -2440,7 +2440,7 @@ MonoBehaviour:
   eventManager: {fileID: 1523998736}
   pipeSpawner: {fileID: 1139307603}
   ghostPrefab: {fileID: 2089142899976758725, guid: 7cfa85b782ac03542a37a19ee02f45a3, type: 3}
-  spawnInterval: 1.87
+  spawnInterval: 1.43
   minY: -6.84
   maxY: 6.56
   useCenterSafeZone: 1
